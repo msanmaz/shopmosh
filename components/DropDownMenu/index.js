@@ -92,7 +92,7 @@ const DropdownMenu = ({title}) => {
  
                         {
                           repeat(3).map((index) => (
-                            <Thumbnail images={image} key={index} />
+                            <SkeletonProductPreview key={index} />
                           ))}
                       </div>
                     </div>

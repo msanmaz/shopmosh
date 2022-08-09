@@ -35,7 +35,7 @@ const endpoints = [
     },
     {
         name: 'All',
-        slug: '/',
+        slug: 'All Products',
     },
 
 

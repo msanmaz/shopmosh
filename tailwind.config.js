@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -38,5 +40,15 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui"),
+  plugin(function ({ addUtilities }) {
+    addUtilities({
+      '.bg-overlay': {
+        'background': 'linear-gradient(var(--overlay-angle, 0deg), var(--overlay-colors)), var(--overlay-image)',
+        'background-position': 'center',
+        'background-size': 'cover',
+      },
+    });
+  }),
+],
 }
