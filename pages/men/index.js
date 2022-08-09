@@ -12,8 +12,8 @@ const MenCategories = ({ cache }) => {
         <div className='w-full'>
 
 
-            <div className='flex md:pt-[4rem] justify-center flex-col flex-wrap md:flex-row w-full md:justify-between px-[1.4rem] small:px-[5rem] large:px-[rem]  xlarge:px-[4rem]'>
-                <div className='flex items-center justify-center'>
+            <div className='flex md:pt-[4rem] flex-col flex-wrap md:flex-row w-full px-[2rem] small:px-[5.5rem]'>
+                <div className='flex-1 items-center justify-start'>
                 <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">
                         <ul>
                             <li ><Link href='/'>Home</Link></li>
