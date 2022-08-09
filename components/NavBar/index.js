@@ -81,7 +81,7 @@ const Nav = () => {
 
           <div className="flex md:hidden items-center h-full">
             <Link href="/">
-              <a className="text-xl-semi bebasBold uppercase">Acme</a>
+              <a className="text-xl-semi bebasBold uppercase">RELAVOUX</a>
             </Link>
           </div>
 

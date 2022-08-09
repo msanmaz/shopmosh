@@ -24,9 +24,9 @@ const ProductCard = ({ product, height }) => {
 
   return (
 
-    <a className="group w-full md:w-[33%] lg:w-[30%] px-4 pt-4">
+    <a className="group w-full md:w-[33%] lg:w-[30%] px-4 py-[2rem]">
       <div className="w-full bg-gray-200 rounded-none overflow-hidden">
-        <div className={`relative  cursor-pointer h-[27rem]`} 
+        <div className={`relative  cursor-pointer`} 
           >
 
           <Transition
@@ -38,13 +38,10 @@ const ProductCard = ({ product, height }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Thumbnail images={originalSrc} size={'large'} /></Transition>
+            <Thumbnail images={originalSrc} size={'full'} /></Transition>
 
 
           <Transition show={isHovering}>
-
-
-
             <Transition.Child
               enter="ease-in-out duration-700"
               enterFrom="opacity-0"
