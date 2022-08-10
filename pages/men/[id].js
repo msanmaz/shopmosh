@@ -1,36 +1,39 @@
 import React, { useMemo } from 'react'
-import ProductCard from 'components/ProductCard'
-import Head from 'next/head'
+import ProductCard from 'components/ProductCard/Product-Card'
 import { readCache } from 'lib/cache'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import NavBar from 'components/NavBar'
+import NavBar from 'components/NavBar/Nav-Bar'
+import Head from 'common/Head'
+
+
 const MenCategories = ({ cache }) => {
 
     const data = cache.products.edges;
     const router = useRouter()
-    const [currentCategory, setCurrentCategory] = React.useState(router.query.id)
-    console.log(router,'inid')
 
-
+    console.log(router.query.id,'id')
     const categoryProducts = useMemo(() => {
         // if there aren't any products return an empty array, which in the rendering function will turn into 0 product divs
         if (!data) return []
 
         // if currentCategory is not set (if you forgot default value for example) return all products
         // also if currentCategory is 'all' skip filtering the products because we obviously return all of them
-        if (!currentCategory) return data
+        if (!router.query.id) return data
 
-        if (currentCategory === 'All Products') return data
+        if (router.query.id === 'All') return data
 
         // here we return any product who's categories include one with the slug equaling the value of 'currentCategory'
-        return data.filter(p => p.node.productType === currentCategory)
+        return data.filter(p => p.node.productType === router.query.id)
 
-    }, [data, currentCategory,setCurrentCategory])
-
+    }, [data,router.query.id])
 
     return (
 <>
+<Head
+        title={router.query.id}
+        description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
+      />
         <NavBar/>
         <div className='w-full'>
 
@@ -41,7 +44,7 @@ const MenCategories = ({ cache }) => {
                         <ul>
                             <li ><Link href='/'>Home</Link></li>
                             <li ><Link href='/men'>Men</Link></li>
-                            <li >{currentCategory}</li>
+                            <li >{router.query.id}</li>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +77,7 @@ const MenCategories = ({ cache }) => {
             </div>
 
 
-            <div className="flex flex-wrap mx-[0.5rem] md:mx-[11.5rem]">
+            <div className="flex flex-wrap mx-[0.5rem]">
                 {categoryProducts.length >= 1 ?
                     categoryProducts.map(product => (
                         <ProductCard height={27} key={product.node.id} product={product} />

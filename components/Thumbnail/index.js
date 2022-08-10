@@ -28,7 +28,6 @@ const ImageOrPlaceholder = ({
   images,
   size,
 })  => {
-  console.log(images)
   return images ? (
     <Image
       src={images}

@@ -1,18 +1,21 @@
 import React, { useMemo } from 'react'
-import ProductCard from 'components/ProductCard'
-import Head from 'next/head'
+import ProductCard from 'components/ProductCard/Product-Card'
+import Head from 'common/Head'
 import { readCache } from 'lib/cache'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import NavBar from 'components/NavBar'
+import NavBar from 'components/NavBar/Nav-Bar'
 const MenCategories = ({ cache }) => {
     return (
 <>
+<Head
+        title="MEN"
+        description="Shop all available models only at the RELAVOUX. Worldwide Shipping. Secure Payment."
+      />
         <NavBar/>
         <div className='w-full'>
 
 
-            <div className='flex md:pt-[4rem] flex-col flex-wrap md:flex-row w-full px-[2rem] small:px-[5.5rem]'>
+            <div className='flex md:pt-[4rem] flex-col flex-wrap md:flex-row w-full px-[2rem] small:px-[6.1rem]'>
                 <div className='flex-1 items-center justify-start'>
                 <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">
                         <ul>

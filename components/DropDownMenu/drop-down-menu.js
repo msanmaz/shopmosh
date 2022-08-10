@@ -6,12 +6,14 @@ import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useState } from "react"
+import { useContext } from 'react'
+import { CartContext } from 'context/shopContext'
 
 const DropdownMenu = ({title}) => {
+  const { getCat,collection } = useContext(CartContext)
   const [open, setOpen] = useState(false)
   const { push } = useRouter()
 
-  const image ='/male_bg.jpg'
   return (
     <div
       onMouseEnter={() => setOpen(true)}

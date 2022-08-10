@@ -8,7 +8,7 @@ const Head = ({ title, description, image }) => {
       <meta itemProp="name" content={title} />
       {description && <meta itemProp="description" content={description} />}
       {image && <meta itemProp="image" content={image} />}
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/static/favicon.ico" />
     </NextHead>
   )
 }

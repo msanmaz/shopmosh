@@ -1,12 +1,21 @@
 import { ErrorMessage } from "@hookform/error-message"
-import Eye from "@modules/common/icons/eye"
-import EyeOff from "@modules/common/icons/eye-off"
+import Eye from "common/icons/eye"
+import EyeOff from "common/icons/eye-off"
 import clsx from "clsx"
 import React, { useEffect, useImperativeHandle, useState } from "react"
 import { get } from "react-hook-form"
 
+type InputProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "placeholder"
+> & {
+  label: string
+  errors?: Record<string, unknown>
+  touched?: Record<string, unknown>
+  name: string
+}
 
-const Input = React.forwardRef<HTMLInputElement>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ type, name, label, errors, touched, required, ...props }, ref) => {
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [showPassword, setShowPassword] = useState(false)
@@ -22,7 +31,7 @@ const Input = React.forwardRef<HTMLInputElement>(
       }
     }, [type, showPassword])
 
-    useImperativeHandle(ref, () => inputRef.current)
+    useImperativeHandle(ref, () => inputRef.current!)
 
     const hasError = get(errors, name) && get(touched, name)
 

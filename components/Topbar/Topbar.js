@@ -35,7 +35,7 @@ const endpoints = [
     },
     {
         name: 'All',
-        slug: 'All Products',
+        slug: 'All',
     },
 
 
@@ -47,14 +47,12 @@ const Topbar = ({isHome,isScrolled}) => {
     const [currentCategory, setCurrentCategory] = React.useState(router.query.id)
 
     const onCategoryClick = e => {
-        console.log('click')
-        // setCurrentCategory(e.target.id)
-        // if(e.target.id === 'All'){
-        //     router.push(`/men`, undefined, { shallow: true })
-        // }
-        // router.push(`/men/${e.target.id}`, undefined, { shallow: true })
+      setCurrentCategory(e.target.id)
+        if(e.target.id === 'All'){
+            router.push(`/men`, undefined, { shallow: false })
+        }
+        router.push(`/men/${e.target.id}`, undefined, { shallow: true })
     }
-
     const listItems = []
 
     const activeClass = 'border border-black'
