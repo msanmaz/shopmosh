@@ -5,7 +5,8 @@ import { useContext } from 'react'
 import { CartContext } from '/context/shopContext'
 import Input from 'common/Input/input'
 import Button from 'common/button/CommonButton'
-import { createCustomerAccessToken } from '../../lib/shopify'
+import { createCustomerAccessToken, getCustomerInfo } from '../../lib/shopify'
+import Spinner from '../../common/icons/spinner'
 
 const Login = ({ setCurrentView }) => {
 
@@ -19,7 +20,7 @@ const Login = ({ setCurrentView }) => {
 
   const [error, SetError] = React.useState({ status: false, message: '' })
   const [loading, SetLoading] = React.useState(false)
-  const { accessToken, SetAccessToken, setCustomerInfo } = useContext(CartContext)
+  const { accessToken, SetAccessToken} = useContext(CartContext)
 
 
   const onFormSubmit = handleSubmit(async (data, event) => {
@@ -28,8 +29,7 @@ const Login = ({ setCurrentView }) => {
       email: data.email,
       password: data.password
     }
-    const resp = await createCustomerAccessToken(token).then((user) => {
-      console.log(user)
+    await createCustomerAccessToken(token).then((user) => {
       if (user.data.customerAccessTokenCreate.customerAccessToken !== null) {
         const access = user.data.customerAccessTokenCreate.customerAccessToken
         localStorage.setItem('user', JSON.stringify(access));
@@ -37,7 +37,7 @@ const Login = ({ setCurrentView }) => {
         SetLoading(false)
         setTimeout(() => {
           router.push(`/account/${access.accessToken}`)
-        }, 1200);
+        }, 2000);
       } else if (user.data?.customerAccessTokenCreate.customerUserErrors.length >= 1) {
         SetError({ status: true, message: 'Wrong Credentials' })
         SetLoading(false)
@@ -81,7 +81,7 @@ const Login = ({ setCurrentView }) => {
           <Button type='submit' className="mt-6">                                    {accessToken ? (
             'Successful ✔️'
           ) : loading ? (
-            'Loading'
+            <Spinner/>
           ) : (
             `Login`
           )}</Button>
@@ -103,4 +103,4 @@ const Login = ({ setCurrentView }) => {
   )
 }
 
-export default React.memo(Login)
+export default Login

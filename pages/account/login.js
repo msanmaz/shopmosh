@@ -5,11 +5,22 @@ import { useState } from "react"
 import Login from "../../components/Login/User-Login"
 import Register from '../../components/Register/User-Register'
 import Layout from '../../common/Layout/lay-out'
+import { useContext } from 'react'
+import { CartContext } from 'context/shopContext'
+import { useRouter } from 'next/dist/client/router'
+
+
+
+
 
 const LoginUser = () => {
+  const router = useRouter()
  const [currentView, setCurrentView] = useState('Login')
+ const { accessToken, customerInfo,setCustomerInfo,SetAccessToken,getCustInfo } = useContext(CartContext)
 
-
+  if(accessToken){
+    router.push(`/account/${accessToken.accessToken}`)
+  }
 
   return (
     <>

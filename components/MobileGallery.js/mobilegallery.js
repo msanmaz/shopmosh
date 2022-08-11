@@ -12,7 +12,7 @@ export const MobileGallery = ({product}) => {
     nextTwo.map((item, i) => {
         listItems.push(
             <SwiperSlide className='swiperProduct' key={`slide-${i}`}>
-               <Thumbnail size='full' thumbnail={item} className='max-h-full max-w-full h-[68vh] w-full object-cover bg-center'/>
+               <Thumbnail size='full' thumbnail={item} className='px-4'/>
             </SwiperSlide>
         )
     })

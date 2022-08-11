@@ -3,11 +3,9 @@ import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
 import {useRouter } from 'next/router'
 import { getCustomerInfo } from 'lib/shopify'
-
-
+import Layout from '../../common/Layout/lay-out'
 
 export async function getServerSideProps(context) {
-  console.log(context)
   const user = await getCustomerInfo(context.query.id)
 
   return {
@@ -19,13 +17,19 @@ export async function getServerSideProps(context) {
 
 
 
+
 const Profile = ({user}) => {
-  const { accessToken, customerInfo,setCustomerInfo,SetAccessToken } = useContext(CartContext)
+  const { accessToken, customerInfo,setCustomerInfo,SetAccessToken,getCustInfo } = useContext(CartContext)
   const router = useRouter()
   const [isSSR, setIsSSR] = React.useState(true);
+  console.log(customerInfo,'infoid')
 
   React.useEffect(() => {
     setIsSSR(false);
+    const fetchCats = async () => {
+      await getCustInfo(accessToken.accessToken)
+    }
+    fetchCats()
   }, []);
 
   const handleClick = () => {
@@ -40,14 +44,14 @@ const Profile = ({user}) => {
 
   
   if (!isSSR & !accessToken) {
-    return <p className='bebas justify-center flex py-[5rem]'>Not logged in!</p>
+    router.push('/account/login')
   }
 
     return (
       <>
         <div className='py-[5rem]'>
           <div className='flex flex-col items-center justify-center'>
-            <p className='text-black bebas text-4xl py-2'>{user ? `Welcome ${user.firstName}!` : ''}</p>
+            <p className='text-black bebas text-4xl py-2'>{user && `Welcome ${user.firstName}`}</p>
             <button onClick={handleClick} className='btn btn-ghost'>Logout</button>
           </div>
         </div>
@@ -57,3 +61,7 @@ const Profile = ({user}) => {
 
 
 export default Profile
+
+Profile.getLayout = (page) => {
+  return <Layout title={'Account'}>{page}</Layout>
+}

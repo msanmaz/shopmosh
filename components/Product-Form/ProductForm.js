@@ -5,6 +5,8 @@ import { CartContext } from "context/shopContext"
 import Minus from 'common/icons/minus'
 import Plus from 'common/icons/plus'
 import ProductTabs from '../Product-tabs/ProductTabs'
+import clsx from 'clsx'
+import Button from '../../common/button/CommonButton'
 
 const ProductForm = ({ product, variants }) => {
   const [quantity, setQuantity] = useState(1)
@@ -77,7 +79,10 @@ const ProductForm = ({ product, variants }) => {
                             handleSizeChange(item.node.id)
                           }}
                         />
-                        <div className={`p-[0.15rem] mt-3 h-[2rem] w-[2rem] md:h-auto md:w-auto md:p-2 text-lg rounded-lg  border-gray-300 border-1 border bebas block cursor-pointer mr-3 ${checked ? "text-white bg-gray-900" : "text-gray-900 bg-gray-100"}`}>
+                        <div className={clsx(
+                "border-gray-200 border bebas p-[0.15rem] mt-3 h-[2rem] w-[2rem] mr-3 md:h-auto md:w-auto md:p-2 text-lg rounded-lg space-y-4 transition-all duration-200",
+                { "text-white bg-gray-900": checked }
+              )}>
                           <span className="px-2">{item.node.title}</span>
                         </div>
                       </label>
@@ -123,10 +128,10 @@ const ProductForm = ({ product, variants }) => {
         </div>
         <ProductTabs product={product} />
 
-        <button
+        <Button
           onClick={() => handleAddToCart()}
-          className="bg-black rounded-lg text-white px-2 py-3 mt-3 hover:bg-gray-800">Add To Card
-        </button>
+        >Add To Card
+        </Button>
       </div>
     </>
   )

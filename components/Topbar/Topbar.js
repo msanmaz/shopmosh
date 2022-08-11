@@ -41,17 +41,17 @@ const endpoints = [
 
 ]
 
-const Topbar = ({isHome,isScrolled}) => {
+const Topbar = ({ isHome, isScrolled }) => {
 
     const router = useRouter()
     const [currentCategory, setCurrentCategory] = React.useState(router.query.id)
 
     const onCategoryClick = e => {
-      setCurrentCategory(e.target.id)
-        if(e.target.id === 'All'){
-            router.push(`/men`)
+        setCurrentCategory(e.target.id)
+        {
+            e.target.id === 'All' ? router.push(`/men`, undefined, { shallow: true }) : router.push(`/men/${e.target.id}`, undefined, { shallow: true })
+
         }
-        router.push(`/men/${e.target.id}`, undefined, { shallow: true })
     }
     const listItems = []
 
@@ -90,13 +90,13 @@ const Topbar = ({isHome,isScrolled}) => {
 
             <div className={`${isHome && !isScrolled ? 'opacity-0' : 'opacity-1'} transition-opacity pl-[1.1rem]   md:pl-[8rem] text-base z-[50] bg-white  !h-[3rem] w-full py-[0.7rem] items-center border-b border-gray-300`}>
 
-               <Swiper
-                        slidesPerView={'auto'}
-                        grabCursor={true}
-                    >
-                        {listItems}
+                <Swiper
+                    slidesPerView={'auto'}
+                    grabCursor={true}
+                >
+                    {listItems}
 
-                    </Swiper>
+                </Swiper>
             </div>
         </>
     )

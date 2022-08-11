@@ -10,15 +10,16 @@ import Topbar from "../Topbar/Topbar"
 import CartDropdown from "../CartDropdown/cart-dropdown"
 import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
-import {repeat} from "../../lib/helpers"
+import { repeat } from "../../lib/helpers"
 import SkeletonProductPreview from "../Skeletons/SkeletonProductPreview"
 
 const Nav = () => {
-  const { accessToken, collection } = useContext(CartContext)
+  const { accessToken, collection,wishList,customerInfo } = useContext(CartContext)
   const { pathname } = useRouter()
   const [isHome, setIsHome] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-
+  const wishListLength = !wishList ? 0 : wishList?.items.length
+  console.log(customerInfo,'custinfonavbar')
   //useEffect that detects if window is scrolled > 5px on the Y axis
   useEffect(() => {
     if (isHome) {
@@ -45,7 +46,6 @@ const Nav = () => {
 
 
   const { toggle } = useMobileMenu()
-
 
 
   return (
@@ -77,11 +77,11 @@ const Nav = () => {
                   <a className="text-xl-semi bebasBold uppercase">RELAVOUX</a>
                 </Link>
               </div>
-              
+
 
               <div className="hidden pl-[3rem] small:block h-full">
-              <DropdownMenu title={'Collection'} collection={collection} />
-            </div>
+                <DropdownMenu title={'Collection'} collection={collection} />
+              </div>
 
             </div>
 
@@ -94,16 +94,25 @@ const Nav = () => {
 
 
             <div className="flex items-center futuraMedium uppercase gap-x-6 h-full flex-1 basis-0 justify-end">
+
               <div className="hidden small:flex items-center gap-x-6 h-full">
 
-                <Link href={accessToken?.accessToken ? `/account/${accessToken.accessToken}` : '/account/login'}>
+                <Link href='/account/login'>
                   <a>Account</a>
                 </Link>
               </div>
+
+              <div className="hidden small:flex items-center gap-x-6 h-full">
+
+                <Link href='/wishlist'>
+                {`Wish List (${wishListLength})`}
+                </Link>
+              </div>
+
               <CartDropdown />
             </div>
           </nav>
-          <MobileMenu />
+          <MobileMenu customer={customerInfo} accessToken={accessToken} />
         </header>
         <Topbar isHome={isHome} isScrolled={isScrolled} />
       </div>

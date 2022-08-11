@@ -3,7 +3,6 @@ import React from "react"
 const Spinner = ({
   size = "16",
   color = "currentColor",
-  ...attributes
 }) => {
   return (
     <svg
@@ -13,7 +12,7 @@ const Spinner = ({
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      {...attributes}
+
     >
       <circle
         className="opacity-25"

@@ -15,12 +15,12 @@ const ProductDetail = ({ products }) => {
     const router = useRouter()
     const [currentCategory, setCurrentCategory] = React.useState(router.query.id)
     const size = useWindowSize()
-    
+
     return (
         <>
-            <div className='flex pt-[6rem] md:pt-[2rem] pb-[1rem] justify-center flex-col flex-wrap md:flex-row w-full md:justify-between px-[1.4rem] md:pl-[10.2rem] md:pr-[10.5rem]'>
+            <div className='flex pt-[1rem] md:pt-[2rem] pb-[1rem] justify-center flex-col flex-wrap md:flex-row w-full md:justify-between px-[1.4rem] md:pl-[10.2rem] md:pr-[10.5rem]'>
                 <div className='flex items-center justify-center'>
-                <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">
+                    <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">
                         <ul>
                             <li><Link href='/'>Home</Link></li>
                             <li><Link href='/men'>Men</Link></li>
@@ -31,28 +31,31 @@ const ProductDetail = ({ products }) => {
 
             </div>
 
-            {size.width >= '768' ?  <div className='px-[9.5rem] flex flex-row'>
+            {size.width >= '768' ? <div className='px-[9.5rem] flex flex-row'>
                 <div className='w-1/2'>
                     <Gallery product={products.images.edges} />
                 </div>
 
                 <div className='w-1/2'>
-                    <ProductForm product={products}  variants={products.variants.edges} />
+                    <ProductForm product={products} variants={products.variants.edges} />
 
                 </div>
             </div>
-                    : <div className='flex pb-[2rem] flex-col w-full'>
-                    <MobileGallery product={products.images.edges}/>   
+                : <div className='flex pb-[2rem] flex-col w-full'>
+                    <div className='px-[1rem]'>
+                    <MobileGallery product={products.images.edges} />
+
+                    </div>
                     <div className='justify-center'>
-                    <ProductForm product={products} variants={products.variants.edges}/>
+                        <ProductForm product={products} variants={products.variants.edges} />
 
                     </div>
 
 
-                    </div>
-        }
-        
-       
+                </div>
+            }
+
+
 
 
         </>
@@ -62,7 +65,7 @@ const ProductDetail = ({ products }) => {
 
 ProductDetail.getLayout = (page) => {
     return <Layout title={'Product'}>{page}</Layout>
-  }
+}
 
 
 export async function getStaticPaths() {

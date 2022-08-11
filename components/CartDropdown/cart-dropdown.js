@@ -14,7 +14,7 @@ import Button from 'common/button/CommonButton'
 
 const CartDropdown = () => {
   const { state, open, close } = useCartDropdown()
-  const { cart,wishList,checkoutUrl, removeCartItem  } = useContext(CartContext)
+  const { cart, updateCartItemQuantity  } = useContext(CartContext)
   let cartQuantity = 0
   cart.map(item => {
       return (cartQuantity += item?.variantQuantity)
@@ -53,10 +53,10 @@ const CartDropdown = () => {
               <>
                 <div className="overflow-y-scroll max-h-[402px] px-4 grid grid-cols-1 gap-y-8 no-scrollbar">
                   {cart
-                    .map((item) => (
+                    .map((item,index) => (
                       <div
                         className="grid grid-cols-[122px_1fr] gap-x-4"
-                        key={item.id}
+                        key={index}
                       >
                         <div className="w-[122px]">
                           <Thumbnail thumbnail={item.image} size="full" />
@@ -88,7 +88,7 @@ const CartDropdown = () => {
                             <div>
                               <button
                                 className="flex items-center gap-x-1 text-gray-500"
-                                onClick={() => removeCartItem(item.id)}
+                                onClick={() => updateCartItemQuantity(0,item.variantId)}
                               >
                                 <Trash size={14} />
                                 <span>Remove</span>
@@ -111,7 +111,7 @@ const CartDropdown = () => {
                   </div>
                   <Link href="/cart" passHref>
                     <a>
-                      <button className="btn btn-ghost w-full">Go to bag</button>
+                      <Button>Go to bag</Button>
                     </a>
                   </Link>
                 </div>

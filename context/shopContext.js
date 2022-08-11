@@ -1,11 +1,10 @@
 import { createContext, useState, useEffect } from 'react'
-import { createCheckout, getCustomerInfo, updateCheckout,getCollection } from '../lib/shopify'
+import { updateShopifyCheckout } from '../lib/helpers'
+import { createCheckout, updateCheckout,getCollection, getCustomerInfo } from '../lib/shopify'
 const CartContext = createContext()
 
 export default function ShopProvider({ children }) {
-  const [cart, setCart] = useState(()=> {
-    return []
-  })
+  const [cart, setCart] = useState([])
   const [cartOpen, setCartOpen] = useState(false)
   const [checkoutId, setCheckoutId] = useState('')
   const [checkoutUrl, setCheckoutUrl] = useState('')
@@ -49,7 +48,6 @@ export default function ShopProvider({ children }) {
       setCheckoutId(cartObject[1].id)
       setCheckoutUrl(cartObject[1].webUrl)
     }
-
   }, [])
 
   useEffect(() => {
@@ -62,15 +60,19 @@ export default function ShopProvider({ children }) {
   }, [])
 
   
-
+ async function getCustInfo(aToken){
+  if(aToken){
+    const data = await getCustomerInfo(aToken)
+    localStorage.setItem("customer", JSON.stringify([data]))
+  }
+ }
 
 
 
   async function addToCart(newItem) {
-    console.log(cart,'cart')
 
     if (cart.length === 0) {
-      setCart(newItem)
+      setCart([...cart,newItem])
       const checkout = await createCheckout(newItem.variantId, newItem.variantQuantity)
 
       setCheckoutId(checkout.id)
@@ -101,20 +103,25 @@ export default function ShopProvider({ children }) {
     }
   }
 
-  async function removeCartItem(itemToRemove) {
-    const updatedCart = cart.filter(item => item.id !== itemToRemove)
-    console.log(updatedCart,'updated cart')
-    setCart(updatedCart)
-  
-    const newCheckout = await updateCheckout(checkoutId, updatedCart)
-
-    localStorage.setItem("checkout_id", JSON.stringify([updatedCart, newCheckout]))
-
-    if (cart.length === 1) {
-      setCartOpen(false)
+  async function updateCartItemQuantity(quantity,id ) {
+    let newQuantity = Math.floor(quantity)
+    if (quantity === '') {
+      newQuantity = ''
     }
-  }
+    let newCart = [...cart]
+    newCart.forEach(item => {
+      if (item.variantId === id) {
+        item.variantQuantity = newQuantity
+      }
+    })
 
+    // take out zeroes items
+    newCart = newCart.filter(i => i.variantQuantity !== 0)
+    setCart(newCart)
+
+   const data = await updateShopifyCheckout(newCart, checkoutId)
+    localStorage.setItem("checkout_id", JSON.stringify([newCart, data]))
+  }
 
   return (
     <CartContext.Provider value={{
@@ -123,7 +130,6 @@ export default function ShopProvider({ children }) {
       setCartOpen,
       addToCart,
       checkoutUrl,
-      removeCartItem,
       setDrawer,
       drawer,
       wishList,
@@ -133,6 +139,8 @@ export default function ShopProvider({ children }) {
       customerInfo,
       collection,
       setCustomerInfo,
+      updateCartItemQuantity,
+      getCustInfo
     }}>
       {children}
     </CartContext.Provider>
