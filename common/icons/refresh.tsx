@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Refresh: React.FC<IconProps> = ({
+const Refresh = ({
   size = "16",
   color = "currentColor",
   ...attributes

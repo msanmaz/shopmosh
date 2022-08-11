@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Package: React.FC<IconProps> = ({
+const Package = ({
   size = "20",
   color = "currentColor",
   ...attributes

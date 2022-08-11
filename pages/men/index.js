@@ -1,17 +1,13 @@
 import React, { useMemo } from 'react'
 import ProductCard from 'components/ProductCard/Product-Card'
-import Head from 'common/Head'
 import { readCache } from 'lib/cache'
 import Link from 'next/link'
-import NavBar from 'components/NavBar/Nav-Bar'
+import Layout from 'common/Layout/lay-out'
 const MenCategories = ({ cache }) => {
+
     return (
 <>
-<Head
-        title="MEN"
-        description="Shop all available models only at the RELAVOUX. Worldwide Shipping. Secure Payment."
-      />
-        <NavBar/>
+ 
         <div className='w-full'>
 
 
@@ -54,8 +50,8 @@ const MenCategories = ({ cache }) => {
 
 
             <div className="flex flex-wrap mx-[0.5rem] justify-center">
-                {cache.products.edges.length >= 1 ?
-                    cache.products.edges.map(product => (
+                {cache.products.products.edges?.length >= 1 ?
+                    cache.products.products.edges.map(product => (
                         <ProductCard height={27} key={product.node.id} product={product} />
 
                     )) : <div className='text-2xl bebas'>No Products Found</div>
@@ -70,6 +66,9 @@ const MenCategories = ({ cache }) => {
 export default MenCategories
 
 
+MenCategories.getLayout = (page) => {
+    return <Layout title={'MEN'}>{page}</Layout>
+  }
 
 
 

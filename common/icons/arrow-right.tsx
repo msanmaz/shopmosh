@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const ArrowRight: React.FC<IconProps> = ({
+const ArrowRight = ({
   size = "20",
   color = "currentColor",
   ...attributes

@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Cart: React.FC<IconProps> = ({
+const Cart = ({
   size = "20",
   color = "currentColor",
   ...attributes

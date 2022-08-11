@@ -5,35 +5,25 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
 
-interface RegisterCredentials extends FieldValues {
-  first_name: string
-  last_name: string
-  email: string
-  password: string
-  phone?: string
-}
 
 const Register = ({setCurrentView}) => {
-  const [authError, setAuthError] = useState<string | undefined>(undefined)
+  const [authError, setAuthError] = useState(undefined)
   const router = useRouter()
 
-  const handleError = (e: Error) => {
-    setAuthError("An error occured. Please try again.")
-  }
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterCredentials>()
+  } = useForm()
 
 
 
   return (
     <div className="max-w-sm flex flex-col items-center mt-12">
-      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">Become a Relavoux Member</h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Acme Member profile, and get access to an enhanced shopping
+        Create your Relavoux Member profile, and get access to an enhanced shopping
         experience.
       </p>
       <form className="w-full flex flex-col">
@@ -80,7 +70,7 @@ const Register = ({setCurrentView}) => {
           </div>
         )}
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Acme&apos;s{" "}
+          By creating an account, you agree to Relavoux&apos;s{" "}
           <Link href="/content/privacy-policy">
             <a className="underline">Privacy Policy</a>
           </Link>{" "}

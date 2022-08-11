@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Alert: React.FC<IconProps> = ({
+const Alert = ({
   size = "20",
   color = "currentColor",
   ...attributes

@@ -3,13 +3,11 @@ import ProductCard from 'components/ProductCard/Product-Card'
 import { readCache } from 'lib/cache'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import NavBar from 'components/NavBar/Nav-Bar'
-import Head from 'common/Head'
-
+import Layout from 'common/Layout/lay-out'
 
 const MenCategories = ({ cache }) => {
 
-    const data = cache.products.edges;
+    const data = cache.products.products.edges;
     const router = useRouter()
 
     console.log(router.query.id,'id')
@@ -30,11 +28,7 @@ const MenCategories = ({ cache }) => {
 
     return (
 <>
-<Head
-        title={router.query.id}
-        description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
-      />
-        <NavBar/>
+
         <div className='w-full'>
 
 
@@ -77,7 +71,7 @@ const MenCategories = ({ cache }) => {
             </div>
 
 
-            <div className="flex flex-wrap mx-[0.5rem]">
+            <div className="flex flex-wrap justify-center ">
                 {categoryProducts.length >= 1 ?
                     categoryProducts.map(product => (
                         <ProductCard height={27} key={product.node.id} product={product} />
@@ -93,19 +87,22 @@ const MenCategories = ({ cache }) => {
 }
 export default MenCategories
 
-
+MenCategories.getLayout = (page) => {
+    return <Layout title={'MEN'}>{page}</Layout>
+  }
 
 
 
 export async function getStaticPaths() {
     const data = await readCache()
-    const paths = data.products.edges.map(item => {
+    const paths = data.products.products.edges.map(item => {
         const id = String(item.node.productType)
 
         return {
             params: { id }
         }
     })
+
 
     return {
         paths,

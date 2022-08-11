@@ -1,10 +1,11 @@
 import { createContext, useState, useEffect } from 'react'
 import { createCheckout, getCustomerInfo, updateCheckout,getCollection } from '../lib/shopify'
-
 const CartContext = createContext()
 
 export default function ShopProvider({ children }) {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(()=> {
+    return []
+  })
   const [cartOpen, setCartOpen] = useState(false)
   const [checkoutId, setCheckoutId] = useState('')
   const [checkoutUrl, setCheckoutUrl] = useState('')
@@ -51,23 +52,25 @@ export default function ShopProvider({ children }) {
 
   }, [])
 
+  useEffect(() => {
+    const fetchCats = async () => {
+      const collection = await getCollection()
+      setCollection(collection)
+    }
+    fetchCats()
+
+  }, [])
+
   
 
 
-async function getCat(){
-  const collection = await getCollection()
-  if(collection){
-    setCollection(collection)
-  }
 
-}
 
   async function addToCart(newItem) {
-    setCartOpen(true)
+    console.log(cart,'cart')
 
     if (cart.length === 0) {
-      setCart([newItem])
-
+      setCart(newItem)
       const checkout = await createCheckout(newItem.variantId, newItem.variantQuantity)
 
       setCheckoutId(checkout.id)
@@ -100,8 +103,9 @@ async function getCat(){
 
   async function removeCartItem(itemToRemove) {
     const updatedCart = cart.filter(item => item.id !== itemToRemove)
+    console.log(updatedCart,'updated cart')
     setCart(updatedCart)
-
+  
     const newCheckout = await updateCheckout(checkoutId, updatedCart)
 
     localStorage.setItem("checkout_id", JSON.stringify([updatedCart, newCheckout]))
@@ -129,7 +133,6 @@ async function getCat(){
       customerInfo,
       collection,
       setCustomerInfo,
-      getCat
     }}>
       {children}
     </CartContext.Provider>

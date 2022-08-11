@@ -1,16 +1,9 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-type SortingIconProps = {
-  ascendingColor?: string
-  descendingColor?: string
-} & IconProps
 
-const Sorting: React.FC<SortingIconProps> = ({
+const Sorting = ({
   size = "16",
   color = "currentColor",
-  ascendingColor,
-  descendingColor,
   ...attributes
 }) => {
   return (
@@ -24,14 +17,14 @@ const Sorting: React.FC<SortingIconProps> = ({
     >
       <path
         d="M4.66602 10L7.99935 13.3333L11.3327 10"
-        stroke={descendingColor || color}
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M4.66602 6.00008L7.99935 2.66675L11.3327 6.00008"
-        stroke={ascendingColor || color}
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { useContext } from 'react'
 import { CartContext } from '/context/shopContext'
 import Input from 'common/Input/input'
-import Button from 'common/Button/CommonButton'
+import Button from 'common/button/CommonButton'
 import { createCustomerAccessToken } from '../../lib/shopify'
 
 const Login = ({ setCurrentView }) => {

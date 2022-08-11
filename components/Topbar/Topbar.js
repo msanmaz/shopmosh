@@ -49,7 +49,7 @@ const Topbar = ({isHome,isScrolled}) => {
     const onCategoryClick = e => {
       setCurrentCategory(e.target.id)
         if(e.target.id === 'All'){
-            router.push(`/men`, undefined, { shallow: false })
+            router.push(`/men`)
         }
         router.push(`/men/${e.target.id}`, undefined, { shallow: true })
     }

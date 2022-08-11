@@ -195,3 +195,25 @@
       font-weight: 600!important;
       line-height:26px!important
       }
+
+
+      .parent {
+        display: grid;
+        grid-template-columns: 4rem 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .div1 { grid-area: 1 / 1 / 2 / 2; }
+        .div2 { grid-area: 2 / 1 / 3 / 2; }
+        .div3 { grid-area: 3 / 1 / 4 / 2; }
+        .div4 { grid-area: 1 / 2 / 13 / 4; }
+
+        .breadcrumbs > ul > li + *:before{
+          height: 0.8rem!important;
+          width: 0.38rem !important;
+          border-top: 0!important;
+          opacity: 1!important;
+          --tw-rotate:15deg!important;
+        }

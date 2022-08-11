@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Search: React.FC<IconProps> = ({
+const Search = ({
   size = "16",
   color = "currentColor",
   ...attributes

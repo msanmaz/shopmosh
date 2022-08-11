@@ -1,4 +1,3 @@
-import Spinner from "common/Spinner"
 import clsx from "clsx"
 import React from "react"
 
@@ -25,7 +24,7 @@ const Button = ({
         className
       )}
     >
-      {isLoading ? <Spinner /> : children}
+      {children}
     </button>
   )
 }

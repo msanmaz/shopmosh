@@ -68,7 +68,7 @@ const Nav = () => {
               "text-gray-900 flex items-center justify-between w-full h-full text-small-regular transition-colors duration-200"
             )}
           >
-            <div className="flex-1 justify-between basis-0 h-full flex items-center">
+            <div className="flex-1 justify-between md:justify-start basis-0 h-full flex items-center">
               <div className="block small:hidden">
                 <Hamburger setOpen={toggle} />
               </div>
@@ -77,14 +77,11 @@ const Nav = () => {
                   <a className="text-xl-semi bebasBold uppercase">RELAVOUX</a>
                 </Link>
               </div>
+              
 
-              {collection ? collection?.map((item) => {
-                <div className="hidden small:block h-full">
-                  <DropdownMenu collection={item} title={item.title} />
-                </div>
-              }) : repeat(3).map((index) => (
-                <SkeletonProductPreview key={index} />
-              ))}
+              <div className="hidden pl-[3rem] small:block h-full">
+              <DropdownMenu title={'Collection'} collection={collection} />
+            </div>
 
             </div>
 

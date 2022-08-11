@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const ChevronDown: React.FC<IconProps> = ({
+const ChevronDown = ({
   size = "16",
   color = "currentColor",
   ...attributes

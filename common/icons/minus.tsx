@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Minus: React.FC<IconProps> = ({
+const Minus = ({
   size = "16",
   color = "currentColor",
   ...attributes

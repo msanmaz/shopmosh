@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Gift: React.FC<IconProps> = ({
+const Gift = ({
   size = "20",
   color = "currentColor",
   ...attributes

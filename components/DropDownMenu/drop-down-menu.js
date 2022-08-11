@@ -6,11 +6,44 @@ import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useState } from "react"
-import { useContext } from 'react'
-import { CartContext } from 'context/shopContext'
+import { chunk } from "lodash"
 
-const DropdownMenu = ({title}) => {
-  const { getCat,collection } = useContext(CartContext)
+const endpoints = [
+  {
+      name: 'New Arrivals',
+      slug: 'New In',
+  },
+  {
+      name: 'Best Sellers',
+      slug: 'Sale',
+
+  },
+  {
+      name: 'Tshirt',
+      slug: 'Tshirt & Longsleeves',
+
+  },
+  {
+      name: 'Sweatshirt',
+      slug: 'Sweatshirt & Hoodies',
+
+  },
+  {
+      name: 'Jeanshosen',
+      slug: 'Jeanshosen & Jogger',
+
+
+  },
+  {
+      name: 'All',
+      slug: 'All',
+  },
+
+
+]
+
+
+const DropdownMenu = ({ title, collection }) => {
   const [open, setOpen] = useState(false)
   const { push } = useRouter()
 
@@ -29,7 +62,7 @@ const DropdownMenu = ({title}) => {
                   className={clsx(
                     "relative h-full flex futuraMedium uppercase items-center transition-all ease-out duration-200"
                   )}
-                  onClick={() => push("/store")}
+                  onClick={() => push("/men")}
                 >
                   {title}
                 </Popover.Button>
@@ -57,21 +90,21 @@ const DropdownMenu = ({title}) => {
                         Collections
                       </h3>
                       <div className="flex items-start">
-                        {/* {collections &&
-                          chunk(collections, 6).map((chunk, index) => {
+                      {endpoints &&
+                          chunk(endpoints, 6).map((chunk, index) => {
                             return (
                               <ul
                                 key={index}
                                 className="min-w-[152px] max-w-[200px] pr-4"
                               >
-                                {chunk.map((collection) => {
+                                {chunk.map((collection,index) => {
                                   return (
-                                    <div key={collection.id} className="pb-3">
+                                    <div key={index} className="pb-3">
                                       <Link
-                                        href={`/collections/${collection.id}`}
+                                        href={`/men/${collection.slug}`}
                                       >
                                         <a onClick={() => setOpen(false)}>
-                                          {collection.title}
+                                          {collection.name}
                                         </a>
                                       </Link>
                                     </div>
@@ -79,23 +112,20 @@ const DropdownMenu = ({title}) => {
                                 })}
                               </ul>
                             )
-                          })} */}
-                        {
-                          repeat(6).map((index) => (
-                            <div
-                              key={index}
-                              className="w-12 h-4 bg-gray-100 animate-pulse"
-                            />
-                          ))}
+                          })}
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="grid grid-cols-3 gap-4">
- 
-                        {
-                          repeat(3).map((index) => (
-                            <SkeletonProductPreview key={index} />
-                          ))}
+                        {collection?.slice(0).reverse().map((item,index) => {
+                          return <div key={index}>
+                            <Thumbnail thumbnail={item.node.image.originalSrc}  size="full" />
+                            <div className="text-base-regular mt-2">
+                              <span>{item.node.title}</span>
+                            </div>
+                          </div>
+                        })} {!collection&& repeat(3).map((index) => (
+                          <SkeletonProductPreview key={index} /> ))}
                       </div>
                     </div>
                   </div>

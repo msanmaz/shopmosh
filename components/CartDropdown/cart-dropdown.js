@@ -9,13 +9,12 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/shopContext'
 import { Fragment } from "react"
 import {formatter} from '../../lib/helpers'
-import Button from 'common/Button/CommonButton'
+import Button from 'common/button/CommonButton'
 
 
 const CartDropdown = () => {
   const { state, open, close } = useCartDropdown()
   const { cart,wishList,checkoutUrl, removeCartItem  } = useContext(CartContext)
-  console.log(cart)
   let cartQuantity = 0
   cart.map(item => {
       return (cartQuantity += item?.variantQuantity)
@@ -89,7 +88,7 @@ const CartDropdown = () => {
                             <div>
                               <button
                                 className="flex items-center gap-x-1 text-gray-500"
-                                onClick={() => deleteItem(item.id)}
+                                onClick={() => removeCartItem(item.id)}
                               >
                                 <Trash size={14} />
                                 <span>Remove</span>
@@ -112,7 +111,7 @@ const CartDropdown = () => {
                   </div>
                   <Link href="/cart" passHref>
                     <a>
-                      <Button>Go to bag</Button>
+                      <button className="btn btn-ghost w-full">Go to bag</button>
                     </a>
                   </Link>
                 </div>

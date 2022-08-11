@@ -1,7 +1,6 @@
 import React from "react"
-import { IconProps } from "types/icon"
 
-const Back: React.FC<IconProps> = ({
+const Back = ({
   size = "16",
   color = "currentColor",
   ...attributes
