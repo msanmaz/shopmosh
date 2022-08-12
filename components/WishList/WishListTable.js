@@ -3,7 +3,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
 import { formatter } from 'lib/helpers'
-import Thumbnail from '../Thumbnail'
+import Thumbnail from '../Thumbnail/thumb-nail'
 
 
 const WishListTable = ({ items }) => {

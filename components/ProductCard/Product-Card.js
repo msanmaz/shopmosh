@@ -7,7 +7,7 @@ import { Transition } from '@headlessui/react'
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../../context/shopContext'
-import Thumbnail from '../Thumbnail'
+import Thumbnail from '../Thumbnail/thumb-nail'
 import { useEffect, useCallback } from 'react'
 import { TiTick } from 'react-icons/ti'
 import { IconContext } from "react-icons";
