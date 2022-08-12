@@ -8,7 +8,7 @@ import Summary from "./summary"
 const CartTemplate = ({ cart }) => {
 
     if (!cart || !cart?.id?.length) {
-        return <SkeletonCartPage />
+        return <EmptyCartMessage/>
     }
 
     return (

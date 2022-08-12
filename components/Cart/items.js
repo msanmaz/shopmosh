@@ -10,8 +10,8 @@ const ItemsTemplate = ({ items }) => {
       </div>
       <div className="grid grid-cols-1 gap-y-8 py-8">
         {items
-          ? items.map((item) => {
-                return <Item key={item.id} item={item} />
+          ? items.map((item,index) => {
+                return <Item key={index} item={item} />
               })
           : Array.from(Array(5).keys()).map((i) => {
               return <SkeletonLineItem key={i} />

@@ -3,11 +3,14 @@ import LineItemPrice from "components/Cart/line-item-price"
 import NativeSelect from "components/Cart/NativeSelect"
 import Trash from "common/icons/trash"
 import Thumbnail from "components/Thumbnail/thumb-nail"
+import { useContext } from 'react'
+import { CartContext } from 'context/shopContext'
 
 
 
 const Item = ({ item }) => {
-  console.log(item,'initem')
+  const { updateCartItemQuantity  } = useContext(CartContext)
+
   return (
     <div className="grid grid-cols-[122px_1fr] gap-x-4">
       <div className="w-[122px]">
@@ -21,7 +24,6 @@ const Item = ({ item }) => {
           </div>
           <NativeSelect
             value={item.variantQuantity}
-          
             className="max-h-[35px] w-[75px]"
           >
             {/* {Array.from([...Array(item.variant)].keys())
@@ -40,7 +42,7 @@ const Item = ({ item }) => {
           <div>
             <button
               className="flex items-center gap-x-1 text-gray-500"
-              onClick={() => deleteItem(item.id)}
+              onClick={() => updateCartItemQuantity(0,item.variantId)}
             >
               <Trash size={14} />
               <span>Remove</span>

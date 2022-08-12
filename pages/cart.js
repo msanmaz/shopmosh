@@ -8,7 +8,7 @@ import Button from 'common/button/CommonButton'
 import Layout from "../common/Layout/lay-out"
 
 const CartTemplate = () => {
-    const { cart, updateCartItemQuantity  } = useContext(CartContext)
+    const { cart,checkoutUrl  } = useContext(CartContext)
     let cartQuantity = 0
     cart.map(item => {
         return (cartQuantity += item?.variantQuantity)
@@ -18,22 +18,28 @@ const CartTemplate = () => {
     cart.map(item => {
       cartTotal += item?.variantPrice * item?.variantQuantity
     })
-    console.log(cart)
+   
+
+    function per(num, amount){
+        return num*amount/100;
+      }
+
+      
 
     if (!cart || !cart?.length) {
-        return <p>....Loading</p>
+        return <EmptyCartMessage/>
     }
 
     return (
-        <div className="bg-gray-50 py-12">
-            <div className="content-container">
+        <div className="bg-gray-50 md:py-12">
+            <div className="content-container !px-0 md:!px-8">
                 {cart.length ? (
                     <div className="grid grid-cols-1 small:grid-cols-[1fr_360px] gap-x-8">
                         <div className="flex flex-col bg-white p-6 gap-y-6">
-                            <ItemsTemplate  items={cart} />
+                            <ItemsTemplate items={cart} />
                         </div>
                         <div className="relative">
-                            <div className="flex flex-col gap-y-8 sticky top-12">
+                            <div className="flex flex-col gap-y-8 sticky top-[7rem]">
                                 {cart && (
                                     <>
                                         <div className="bg-white p-6">
@@ -47,30 +53,28 @@ const CartTemplate = () => {
                                                         <div className="flex flex-col gap-y-1">
                                                             <div className="flex items-center justify-between">
                                                                 <span>Shipping</span>
-                                                                <span>10</span>
+                                                                <span>Calculated On Checkout</span>
                                                             </div>
                                                             <div className="flex items-center justify-between">
                                                                 <span>Taxes</span>
-                                                                <span>10</span>
+                                                                <span>23%</span>
                                                             </div>
                                                         </div>
                                                         <div className="h-px w-full border-b border-gray-200 border-dashed my-4" />
                                                         <div className="flex items-center justify-between text-base-regular text-gray-900 mb-2">
                                                             <span>Total</span>
-                                                            <span>50</span>
+                                                            <span>{formatter.format(per(23,cartTotal)+ cartTotal)}</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <Link href="/checkout">
+                                                <Link href={checkoutUrl}>
                                                     <a>
                                                         <Button>Go to checkout</Button>
                                                     </a>
                                                 </Link>
                                             </div>
                                         </div>
-                                        <div className="bg-white p-6">
 
-                                        </div>
                                     </>
                                 )}
                             </div>
