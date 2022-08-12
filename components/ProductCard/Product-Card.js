@@ -48,7 +48,7 @@ const ProductCard = ({ product }) => {
 
     <a className="group w-full md:w-[33%] lg:w-[30%] px-4 pt-4">
     <div className="w-full bg-gray-200 rounded-none overflow-hidden">
-      <div className={`relative  cursor-pointer h-[28rem] md:h-[30rem] max-h-[30rem]`} onMouseEnter={onMouseEnter}
+      <div className={`relative  cursor-pointer h-[26rem] max-h-[26rem] md:h-[30rem] md:max-h-[30rem]`} onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}>
 
         <Transition

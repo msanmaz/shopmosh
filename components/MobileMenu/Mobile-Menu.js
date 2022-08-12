@@ -112,25 +112,6 @@ let collections
                 </Link>
               </div>
             )}
-            <div className="flex flex-col gap-y-4">
-              <span className="text-gray-700 uppercase">Delivery</span>
-              <button
-                className="flex items-center justify-between border-b border-gray-200 py-2"
-                onClick={setScreenCountry}
-              >
-                <span className="sr-only">
-                  Click to select shipping country
-                </span>
-                <div className="flex items-center gap-x-2">
-                  <ReactCountryFlag countryCode={"ie"} svg />
-                  <span className="normal-case">
-                    Shipping to{" "}
-                  </span>
-                </div>
-                <ChevronDown className="-rotate-90" />
-
-              </button>
-            </div>
           </div>
         </div>
       </div>
