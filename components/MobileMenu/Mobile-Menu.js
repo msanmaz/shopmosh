@@ -5,10 +5,13 @@ import { useMobileMenu } from "context/mobile-menu-context"
 
 import {ReactCountryFlag} from 'react-country-flag'
 import Container from "common/Container";
-const MainMenu = ({customer,accessToken}) => {
+import { useContext } from 'react'
+import { CartContext } from 'context/shopContext'
+const MainMenu = ({}) => {
 
 let collections
 
+const { accessToken, collection,wishList,customerInfo } = useContext(CartContext)
 
   const setScreenCountry = () => setScreen("country")
   const setScreenSearch = () => setScreen("search")
@@ -81,7 +84,7 @@ let collections
 
         <div className="flex flex-col">
           <div className="flex flex-col gap-y-8 text-small-regular">
-            {!customer ? (
+            {!customerInfo ? (
               <div className="flex flex-col gap-y-4">
                 <span className="text-gray-700 uppercase">Account</span>
                 <Link href={`/account/login`} passHref>
@@ -106,7 +109,7 @@ let collections
                       className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
                     >
                       <span className="sr-only">Go to account page</span>
-                      <span className="normal-case">{customer[0].firstName}</span>
+                      <span className="normal-case">{customerInfo[0]?.firstName}</span>
                     </button>
                   </a>
                 </Link>

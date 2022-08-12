@@ -8,6 +8,7 @@ import Layout from '../../common/Layout/lay-out'
 import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
 import { useRouter } from 'next/dist/client/router'
+import ReactCountryFlag from 'react-country-flag'
 
 
 
@@ -15,18 +16,23 @@ import { useRouter } from 'next/dist/client/router'
 
 const LoginUser = () => {
   const router = useRouter()
- const [currentView, setCurrentView] = useState('Login')
- const { accessToken, customerInfo,setCustomerInfo,SetAccessToken,getCustInfo } = useContext(CartContext)
+  const [currentView, setCurrentView] = useState('Login')
+  const { accessToken, customerInfo, setCustomerInfo, SetAccessToken, getCustInfo } = useContext(CartContext)
 
-  if(accessToken){
-    router.push(`/account/${accessToken.accessToken}`)
-  }
+
+  // React.useEffect(() => {
+  //   if (localStorage.user) {
+  //     router.push(`/account/${accessToken.accessToken}`)
+  //   }
+  // }, [])
+
+
 
   return (
     <>
       <div className="w-full flex justify-center py-24">
-      {currentView === "Login" ? <Login setCurrentView={setCurrentView} /> : <Register setCurrentView={setCurrentView} />}
-    </div>
+        {currentView === "Login" ? <Login setCurrentView={setCurrentView} /> : <Register setCurrentView={setCurrentView} />}
+      </div>
     </>
   )
 }

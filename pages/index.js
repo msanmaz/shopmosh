@@ -3,6 +3,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
 import Layout from '../common/Layout/lay-out'
+import { useRouter } from 'next/router'
 export default function Home() {
 
   return (

@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { CartContext } from '/context/shopContext'
 import Input from 'common/Input/input'
 import Button from 'common/button/CommonButton'
-import { createCustomerAccessToken, getCustomerInfo } from '../../lib/shopify'
+import { createCustomerAccessToken } from '../../lib/shopify'
 import Spinner from '../../common/icons/spinner'
 
 const Login = ({ setCurrentView }) => {
@@ -20,8 +20,7 @@ const Login = ({ setCurrentView }) => {
 
   const [error, SetError] = React.useState({ status: false, message: '' })
   const [loading, SetLoading] = React.useState(false)
-  const { accessToken, SetAccessToken} = useContext(CartContext)
-
+  const { accessToken, SetAccessToken,customerInfo,getCustInfo,setCustomerInfo} = useContext(CartContext)
 
   const onFormSubmit = handleSubmit(async (data, event) => {
     SetLoading(true)
@@ -36,8 +35,11 @@ const Login = ({ setCurrentView }) => {
         SetAccessToken(access)
         SetLoading(false)
         setTimeout(() => {
-          router.push(`/account/${access.accessToken}`)
-        }, 2000);
+         const key = window.localStorage.getItem('customer');
+         const data = JSON.parse(key)
+         console.log(data,'afterusb')
+          router.push(`/account/${data[0].firstName}`)
+        }, 2500);
       } else if (user.data?.customerAccessTokenCreate.customerUserErrors.length >= 1) {
         SetError({ status: true, message: 'Wrong Credentials' })
         SetLoading(false)
@@ -47,6 +49,14 @@ const Login = ({ setCurrentView }) => {
 
 
   })
+
+  React.useEffect(()=> {
+    const fetchCats = async () => {
+      const data = await getCustInfo(accessToken.accessToken)
+      setCustomerInfo(data)
+     }
+     fetchCats()
+  },[accessToken])
 
   return (
     <>

@@ -64,6 +64,7 @@ export default function ShopProvider({ children }) {
   if(aToken){
     const data = await getCustomerInfo(aToken)
     localStorage.setItem("customer", JSON.stringify([data]))
+    return data
   }
  }
 
