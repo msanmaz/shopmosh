@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import Thumbnail from 'components/Thumbnail/index'
+import Thumbnail from 'components/Thumbnail/thumb-nail'
 
 export const MobileGallery = ({product}) => {
     const nextTwo = [product[0].node.originalSrc, product[1].node.originalSrc];

@@ -1,6 +1,6 @@
 import { Popover, Transition } from "@headlessui/react"
 import repeat from "lib/utils/repeat"
-import Thumbnail from "components/thumbnail/thumb-nail"
+import Thumbnail from "components/Thumbnail/thumb-nail"
 import SkeletonProductPreview from "components/Skeletons/SkeletonProductPreview"
 import clsx from "clsx"
 import Link from "next/link"

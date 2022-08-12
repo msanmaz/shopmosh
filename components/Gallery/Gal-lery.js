@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { Transition } from '@headlessui/react'
-import Thumbnail from '../Thumbnail/index'
+import Thumbnail from '../Thumbnail/thumb-nail'
 
 const Gallery = ({ product }) => {
 

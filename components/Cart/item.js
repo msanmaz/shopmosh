@@ -2,7 +2,7 @@ import LineItemOptions from "components/Cart/line-item-options"
 import LineItemPrice from "components/Cart/line-item-price"
 import NativeSelect from "components/Cart/NativeSelect"
 import Trash from "common/icons/trash"
-import Thumbnail from "components/thumbnail/thumb-nail"
+import Thumbnail from "components/Thumbnail/thumb-nail"
 
 
 

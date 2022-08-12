@@ -9,7 +9,7 @@ import { CartContext } from '../../context/shopContext'
 import { Fragment } from "react"
 import {formatter} from '../../lib/helpers'
 import Button from 'common/button/CommonButton'
-import Thumbnail from "components/thumbnail/thumb-nail"
+import Thumbnail from "components/Thumbnail/thumb-nail"
 
 
 
