@@ -37,7 +37,6 @@ const Login = ({ setCurrentView }) => {
         setTimeout(() => {
          const key = window.localStorage.getItem('customer');
          const data = JSON.parse(key)
-         console.log(data,'afterusb')
           router.push(`/account/${data[0].firstName}`)
         }, 2500);
       } else if (user.data?.customerAccessTokenCreate.customerUserErrors.length >= 1) {
@@ -51,6 +50,7 @@ const Login = ({ setCurrentView }) => {
   })
 
   React.useEffect(()=> {
+    console.log('render')
     const fetchCats = async () => {
       const data = await getCustInfo(accessToken.accessToken)
       setCustomerInfo(data)

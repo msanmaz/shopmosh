@@ -3,13 +3,14 @@ import { useCartDropdown } from "context/cart-dropdown-context"
 import LineItemOptions from "../LineItemOptions/line-item-options"
 import LineItemPrice from "../LineItemPrice/Line-item-price"
 import Trash from "../../common/icons/trash"
-import Thumbnail from "../Thumbnail"
 import Link from "next/link"
 import { useContext } from 'react'
 import { CartContext } from '../../context/shopContext'
 import { Fragment } from "react"
 import {formatter} from '../../lib/helpers'
 import Button from 'common/button/CommonButton'
+import Thumbnail from "components/thumbnail/thumb-nail"
+
 
 
 const CartDropdown = () => {

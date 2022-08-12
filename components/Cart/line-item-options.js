@@ -2,13 +2,12 @@
 const LineItemOptions = ({ variant }) => {
   return (
     <div className="text-small-regular text-gray-700">
-
-          <div>
+          <div >
             <span>
-              {variant}: {variant.value}
+              Size: {variant}
             </span>
           </div>
-
+        
     </div>
   )
 }

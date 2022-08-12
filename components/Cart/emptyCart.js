@@ -1,4 +1,4 @@
-import UnderlineLink from "common/underline-link"
+import UnderlineLink from "common/underline-link/underline"
 
 const EmptyCartMessage = () => {
   return (

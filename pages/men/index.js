@@ -4,11 +4,15 @@ import { readCache } from 'lib/cache'
 import Link from 'next/link'
 import Layout from 'common/Layout/lay-out'
 import Crumbs from '../../common/Crumbs/crumbs-filter'
+import Head from 'next/head'
 const MenCategories = ({ cache }) => {
 
     return (
         <>
+        <Head>
+        <title>RLVX | MEN</title>
 
+        </Head>
             <div className='w-full'>
 
                 <Crumbs />

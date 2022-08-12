@@ -1,6 +1,6 @@
 import { Popover, Transition } from "@headlessui/react"
 import repeat from "lib/utils/repeat"
-import Thumbnail from "components/Thumbnail"
+import Thumbnail from "components/thumbnail/thumb-nail"
 import SkeletonProductPreview from "components/Skeletons/SkeletonProductPreview"
 import clsx from "clsx"
 import Link from "next/link"
@@ -117,15 +117,15 @@ const DropdownMenu = ({ title, collection }) => {
                     </div>
                     <div className="flex-1">
                       <div className="grid grid-cols-3 gap-4">
-                        {collection?.slice(0).reverse().map((item,index) => {
+                        {collection ? collection.slice(0).reverse().map((item,index) => {
                           return <div key={index}>
                             <Thumbnail thumbnail={item.node.image.originalSrc}  size="full" />
                             <div className="text-base-regular mt-2">
                               <span>{item.node.title}</span>
                             </div>
                           </div>
-                        })} {!collection&& repeat(3).map((index) => (
-                          <SkeletonProductPreview key={index} /> ))}
+                        }) : repeat(3).map((index) => (
+                          <SkeletonProductPreview key={index} /> ))} 
                       </div>
                     </div>
                   </div>

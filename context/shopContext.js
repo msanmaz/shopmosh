@@ -74,6 +74,8 @@ export default function ShopProvider({ children }) {
 
     if (cart.length === 0) {
       setCart([...cart,newItem])
+
+
       const checkout = await createCheckout(newItem.variantId, newItem.variantQuantity)
 
       setCheckoutId(checkout.id)
@@ -81,26 +83,30 @@ export default function ShopProvider({ children }) {
 
       localStorage.setItem("checkout_id", JSON.stringify([newItem, checkout]))
     } else {
-      let newCart = []
+      let newCart = [...cart]
       let added = false
-
-      cart.map(item => {
-        if (item.id === newItem.variantId) {
-          item.variantQuantity++
-          newCart = [...cart]
+      newCart.map(item => {
+        console.log(item,'itemformap')
+        if (item.variantId === newItem.variantId) {
+          item.variantQuantity += newItem.variantQuantity
           added = true
         }
       })
+      let newCartWithItem = [...newCart]
 
-      if (!added) {
-        newCart = [...cart, newItem]
+      if (added) {
+        console.log(newCartWithItem,'aftermapping')
+      }else {
+        newCartWithItem = [...newCart,newItem]
+        console.log(newCartWithItem,'if not added')
       }
 
-      setCart(newCart)
-      const newCheckout = await updateCheckout(checkoutId, newCart)
+      setCart(newCartWithItem)
+      console.log(newCartWithItem,'setting the cart')
+      const newCheckout = await updateShopifyCheckout(newCartWithItem,checkoutId )
+      console.log(newCheckout,'nextheckout')
 
-
-      localStorage.setItem("checkout_id", JSON.stringify([newCart, newCheckout]))
+      localStorage.setItem("checkout_id", JSON.stringify([newCartWithItem, newCheckout]))
     }
   }
 

@@ -3,9 +3,13 @@ import Layout from 'common/Layout/lay-out'
 import Link from 'next/link'
 import { readCache } from 'lib/cache'
 import WishListTable from 'components/WishList/WishListTable'
+import Head from 'next/head'
 const WishList = ({cache}) => {
     return (
         <>
+        <Head>
+        <title>RLVX | WishList</title>
+        </Head>
         <div className='w-full px-[1.5rem] md:px-[10rem]'>
             <div className='flex pt-[1rem] md:pt-[2rem] pb-[1rem] w-full'>
                 <div className='flex items-center justify-center'>

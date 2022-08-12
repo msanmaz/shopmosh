@@ -19,7 +19,6 @@ const Nav = () => {
   const [isHome, setIsHome] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const wishListLength = !wishList ? 0 : wishList?.items.length
-  console.log(customerInfo,'custinfonavbar')
   //useEffect that detects if window is scrolled > 5px on the Y axis
   useEffect(() => {
     if (isHome) {

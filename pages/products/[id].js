@@ -8,6 +8,7 @@ import ProductForm from '../../components/Product-Form/ProductForm'
 import { MobileGallery } from '../../components/MobileGallery.js/mobilegallery'
 import Link from 'next/link'
 import { useWindowSize } from '../../lib/hooks/useWindowSize'
+import Head from 'next/head'
 
 
 
@@ -15,9 +16,13 @@ const ProductDetail = ({ products }) => {
     const router = useRouter()
     const [currentCategory, setCurrentCategory] = React.useState(router.query.id)
     const size = useWindowSize()
-
+    const title = `RLVX | ${products.title}`
     return (
         <>
+        <Head>
+        <title>{title}</title>
+
+        </Head>
             <div className='flex pt-[1rem] md:pt-[2rem] pb-[1rem] justify-center flex-col flex-wrap md:flex-row w-full md:justify-between px-[1.4rem] md:pl-[10.2rem] md:pr-[10.5rem]'>
                 <div className='flex items-center justify-center'>
                     <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">

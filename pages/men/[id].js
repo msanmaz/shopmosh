@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Layout from 'common/Layout/lay-out'
 import Crumbs from '../../common/Crumbs/crumbs-filter'
+import Head from 'next/head'
 
 const MenCategories = ({ cache }) => {
 
     const data = cache.products.products.edges;
     const router = useRouter()
 
-    console.log(router.query.id, 'id')
     const categoryProducts = useMemo(() => {
         // if there aren't any products return an empty array, which in the rendering function will turn into 0 product divs
         if (!data) return []
@@ -29,6 +29,10 @@ const MenCategories = ({ cache }) => {
 
     return (
         <>
+        <Head>
+        <title>RLVX | {router.query.id}</title>
+
+        </Head>
         <Crumbs/>
             <div className='w-full'>
                 <div className="flex flex-wrap justify-center ">

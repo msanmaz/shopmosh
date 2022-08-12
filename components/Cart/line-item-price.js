@@ -1,12 +1,11 @@
 import clsx from "clsx"
-
+import {formatter} from '../../lib/helpers'
 
 
 const LineItemPrice = ({
-  variant,
-  style = "default",
+  hasReducedPrice,
+  price
 }) => {
-  const hasReducedPrice = variant.calculated_price < variant.original_price
 
   return (
     <div className="flex flex-col text-gray-700 text-right">
@@ -15,7 +14,7 @@ const LineItemPrice = ({
           "text-rose-600": hasReducedPrice,
         })}
       >
-        50
+        {formatter.format(price)}
       </span>
 
     </div>

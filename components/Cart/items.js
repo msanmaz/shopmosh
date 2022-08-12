@@ -1,4 +1,4 @@
-import Item from "@modules/cart/components/item"
+import Item from "components/Cart/item"
 import SkeletonLineItem from "./skeleton-line-item"
 
 
@@ -11,7 +11,7 @@ const ItemsTemplate = ({ items }) => {
       <div className="grid grid-cols-1 gap-y-8 py-8">
         {items
           ? items.map((item) => {
-                return <Item key={item.id} item={item} region={region} />
+                return <Item key={item.id} item={item} />
               })
           : Array.from(Array(5).keys()).map((i) => {
               return <SkeletonLineItem key={i} />

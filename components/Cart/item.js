@@ -1,35 +1,30 @@
-import LineItemOptions from "@modules/common/components/line-item-options"
-import LineItemPrice from "@modules/common/components/line-item-price"
-import NativeSelect from "@modules/common/components/native-select"
+import LineItemOptions from "components/Cart/line-item-options"
+import LineItemPrice from "components/Cart/line-item-price"
+import NativeSelect from "components/Cart/NativeSelect"
 import Trash from "common/icons/trash"
-import Thumbnail from "components/thumbnail"
+import Thumbnail from "components/thumbnail/thumb-nail"
 
 
 
 const Item = ({ item }) => {
-
+  console.log(item,'initem')
   return (
     <div className="grid grid-cols-[122px_1fr] gap-x-4">
       <div className="w-[122px]">
-        <Thumbnail thumbnail={item.thumbnail} size="full" />
+        <Thumbnail thumbnail={item.image} size="full" />
       </div>
       <div className="text-base-regular flex flex-col gap-y-8">
         <div className="flex items-start justify-between">
           <div className="flex flex-col">
             <span>{item.title}</span>
-            <LineItemOptions variant={item.variant} />
+            <LineItemOptions variant={item.variantTitle} />
           </div>
           <NativeSelect
-            value={item.quantity}
-            onChange={(value) =>
-              updateItem({
-                lineId: item.id,
-                quantity: parseInt(value.target.value),
-              })
-            }
+            value={item.variantQuantity}
+          
             className="max-h-[35px] w-[75px]"
           >
-            {Array.from([...Array(item.variant.inventory_quantity)].keys())
+            {/* {Array.from([...Array(item.variant)].keys())
               .slice(0, 10)
               .map((i) => {
                 const value = i + 1
@@ -38,7 +33,7 @@ const Item = ({ item }) => {
                     {value}
                   </option>
                 )
-              })}
+              })} */}
           </NativeSelect>
         </div>
         <div className="flex items-end justify-between text-small-regular flex-1">
@@ -53,8 +48,7 @@ const Item = ({ item }) => {
           </div>
           <div>
             <LineItemPrice
-              variant={item.variant}
-              quantity={item.quantity}
+        price={item.variantPrice}
             />
           </div>
         </div>
