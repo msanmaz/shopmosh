@@ -117,7 +117,7 @@ const Modal = () => {
                   </div>
                   <div className="w-1/2 px-[0.5rem]">
                     <a>
-                      <Button>Close</Button>
+                      <Button onClick={close}>Close</Button>
                     </a>
                   </div>
                   </div>
