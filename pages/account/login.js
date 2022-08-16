@@ -8,7 +8,6 @@ import Layout from '../../common/Layout/lay-out'
 import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
 import { useRouter } from 'next/dist/client/router'
-import ReactCountryFlag from 'react-country-flag'
 import Head from 'next/head'
 
 
@@ -22,8 +21,12 @@ const LoginUser = () => {
 
 
   React.useEffect(() => {
-    if (customerInfo) {
-      router.push(`/account/${customerInfo[0]?.firstName}`)
+
+    const stickyValue = window.localStorage.getItem('customer');
+    const user = stickyValue !== null ? JSON.parse(stickyValue) : '';
+    console.log(user)
+    if (user[0]?.firstName) {
+      router.push(`/account/${user[0].firstName}`)
     }
   }, [])
 
@@ -31,10 +34,10 @@ const LoginUser = () => {
 
   return (
     <>
-    <Head>
-    <title>RLVX | Account</title>
+      <Head>
+        <title>RLVX | Account</title>
 
-    </Head>
+      </Head>
       <div className="w-full flex justify-center py-24">
         {currentView === "Login" ? <Login setCurrentView={setCurrentView} /> : <Register setCurrentView={setCurrentView} />}
       </div>

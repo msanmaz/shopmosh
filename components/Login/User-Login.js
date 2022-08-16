@@ -18,9 +18,12 @@ const Login = ({ setCurrentView }) => {
     formState: { errors },
   } = useForm()
 
+
+  
   const [error, SetError] = React.useState({ status: false, message: '' })
   const [loading, SetLoading] = React.useState(false)
   const { accessToken, SetAccessToken,customerInfo,getCustInfo,setCustomerInfo} = useContext(CartContext)
+
 
   const onFormSubmit = handleSubmit(async (data, event) => {
     SetLoading(true)
@@ -44,9 +47,6 @@ const Login = ({ setCurrentView }) => {
         SetLoading(false)
       }
     }).catch(console.log(error))
-
-
-
   })
 
 

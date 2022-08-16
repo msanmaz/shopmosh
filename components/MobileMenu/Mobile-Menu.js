@@ -109,7 +109,7 @@ const { accessToken, collection,wishList,customerInfo } = useContext(CartContext
                       className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
                     >
                       <span className="sr-only">Go to account page</span>
-                      <span className="normal-case">{customerInfo[0]?.firstName}</span>
+                      <span className="normal-case">{customerInfo?.firstName}</span>
                     </button>
                   </a>
                 </Link>
