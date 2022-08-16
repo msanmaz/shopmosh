@@ -83,6 +83,11 @@
      transform: translateX(-50%) translateY(-50%);
    }
 
+   .itemodal{
+    transform: translateX(4%)!important
+   }
+
+
 
   .content-container {
     @apply max-w-[1440px] w-full mx-auto px-8

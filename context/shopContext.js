@@ -1,6 +1,9 @@
 import { createContext, useState, useEffect } from 'react'
 import { updateShopifyCheckout } from '../lib/helpers'
-import { createCheckout, updateCheckout,getCollection, getCustomerInfo } from '../lib/shopify'
+import { createCheckout,getCollection, getCustomerInfo } from '../lib/shopify'
+import { useModalDropDown } from "context/modal-context"
+
+
 const CartContext = createContext()
 
 export default function ShopProvider({ children }) {
@@ -35,6 +38,8 @@ export default function ShopProvider({ children }) {
 
   const [collection,setCollection] = useState()
 
+  const { timedOpen } = useModalDropDown()
+
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -59,6 +64,16 @@ export default function ShopProvider({ children }) {
 
   }, [])
 
+
+    useEffect(()=> {
+      const fetchCats = async () => {
+        const data = await getCustInfo(accessToken.accessToken)
+        localStorage.setItem("customer", JSON.stringify([data]))
+        setCustomerInfo(data)
+       }
+       fetchCats()
+
+    },[accessToken])
   
  async function getCustInfo(aToken){
   if(aToken){
@@ -80,7 +95,7 @@ export default function ShopProvider({ children }) {
 
       setCheckoutId(checkout.id)
       setCheckoutUrl(checkout.webUrl)
-
+      timedOpen()
       localStorage.setItem("checkout_id", JSON.stringify([newItem, checkout]))
     } else {
       let newCart = [...cart]
@@ -95,17 +110,13 @@ export default function ShopProvider({ children }) {
       let newCartWithItem = [...newCart]
 
       if (added) {
-        console.log(newCartWithItem,'aftermapping')
       }else {
         newCartWithItem = [...newCart,newItem]
-        console.log(newCartWithItem,'if not added')
       }
 
       setCart(newCartWithItem)
-      console.log(newCartWithItem,'setting the cart')
       const newCheckout = await updateShopifyCheckout(newCartWithItem,checkoutId )
-      console.log(newCheckout,'nextheckout')
-
+      timedOpen()
       localStorage.setItem("checkout_id", JSON.stringify([newCartWithItem, newCheckout]))
     }
   }

@@ -23,7 +23,7 @@ const LoginUser = () => {
 
   React.useEffect(() => {
     if (customerInfo) {
-      router.push(`/account/${customerInfo[0].firstName}`)
+      router.push(`/account/${customerInfo[0]?.firstName}`)
     }
   }, [])
 

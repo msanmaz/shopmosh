@@ -24,6 +24,7 @@ const Profile = () => {
 
   React.useEffect(() => {
     console.log('logged-In')
+    console.log(customerInfo)
   }, [customerInfo]);
 
 
@@ -42,12 +43,13 @@ const Profile = () => {
     return (
       <>
       <Head>
+
       <title>RLVX | Account</title>
 
       </Head>
         <div className='py-[5rem]'>
           <div className='flex flex-col items-center justify-center'>
-            <p className='text-black bebas text-4xl py-2'>{customerInfo && `Welcome ${customerInfo[0]?.firstName}`} </p>
+            <p className='text-black bebas text-4xl py-2'>{customerInfo ? `Welcome ${customerInfo.firstName}` : 'Not Logged In'}</p>
             <button onClick={handleClick} className='btn btn-ghost'>Logout</button>
           </div>
         </div>

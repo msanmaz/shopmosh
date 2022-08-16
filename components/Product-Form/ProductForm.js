@@ -95,14 +95,14 @@ const ProductForm = ({ product, variants }) => {
           }
 
           <div className="w-full md:w-1/2">
-            <div className="flex flex-col justify-end  ">
+            <div className="flex flex-col justify-end">
               <div className=''>
                 <div className="form-control">
                   <label className="label justify-center">
                     <span className="label-text bebas">Qty.</span>
                   </label>
                   <label className="input-group  justify-end">
-                    <span onClick={() => plusQuantity()}
+                    <span className='bg-white border border-gray-300' onClick={() => plusQuantity()}
                     > <Plus size={15} /></span>
                     <input
                       readOnly
@@ -114,8 +114,8 @@ const ProductForm = ({ product, variants }) => {
                       step="1"
                       value={quantity}
 
-                      className="arrow input focus:outline-none h-[2rem] md:h-[3rem] md:w-[22%] input-bordered w-[25%]"
-                    />                <span className={`${quantity === 0 ? 'btn-disabled' : ''}`} onClick={() => minusQuantity()}
+                      className="input h-[2rem] md:h-[3rem] md:w-[25%] input-bordered w-[22%]"
+                    />                <span className={`bg-white border border-gray-300 ${quantity === 0 ? 'btn-disabled' : ''}`} onClick={() => minusQuantity()}
                     > <Minus size={15} /></span>
                   </label>
                 </div>
@@ -130,7 +130,7 @@ const ProductForm = ({ product, variants }) => {
 
         <Button
           onClick={() => handleAddToCart()}
-        >Add To Card
+        >Add To Cart
         </Button>
       </div>
     </>

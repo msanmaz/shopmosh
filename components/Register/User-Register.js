@@ -4,10 +4,12 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
-
+import { createCustomer } from "../../lib/shopify"
 
 const Register = ({setCurrentView}) => {
   const [authError, setAuthError] = useState(undefined)
+  const [loading, SetLoading] = useState(false)
+  const [success, SetSuccess] = useState({message:'',status:false})
   const router = useRouter()
 
 
@@ -17,8 +19,41 @@ const Register = ({setCurrentView}) => {
     formState: { errors },
   } = useForm()
 
+  const onFormSubmit = async (data, e) => {
+    e.preventDefault();
+    const signUp = {
+        email: data.email,
+        firstName: data.first_name,
+        lastName: data.last_name,
+        phone: data.phone,
+        password: data.password,
+    }
+    SetLoading(true)
+    //Validation
+    if (!signUp.email || !signUp.email.includes('@') || !signUp.password) {
+      setAuthError('Invalid details');
+        return;
+    }
 
+    const resp = await createCustomer(signUp)
+    console.log(resp)
+    if (resp.data.customerCreate?.customerUserErrors.length !== 0) {
+        setAuthError(resp.data.customerCreate?.customerUserErrors[0].message)
+        SetLoading(false)
+    }if(resp.data.customerCreate === null){
+      setAuthError('Unexpected Error Please Try Again')
+    }
+    if(resp.errors){
+      setAuthError(resp.errors[0].message)
+        SetLoading(false)
+    }
+    if(resp.data.customerCreate?.customer.firstName){
+        SetSuccess({status:true, message:'Succesfully Created Please Check Your Email'})
+        SetLoading(false)
+    }
+};
 
+console.log(authError)
   return (
     <div className="max-w-sm flex flex-col items-center mt-12">
       <h1 className="text-large-semi uppercase mb-6">Become a Relavoux Member</h1>
@@ -26,7 +61,7 @@ const Register = ({setCurrentView}) => {
         Create your Relavoux Member profile, and get access to an enhanced shopping
         experience.
       </p>
-      <form className="w-full flex flex-col">
+      <form className="w-full flex flex-col" onSubmit={handleSubmit(onFormSubmit)}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
             label="First name"
@@ -65,7 +100,14 @@ const Register = ({setCurrentView}) => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+             {authError}
+            </span>
+          </div>
+        )}
+                {success.message && (
+          <div>
+            <span className="text-green-500 w-full text-small-regular">
+             {success.message}
             </span>
           </div>
         )}
@@ -80,7 +122,7 @@ const Register = ({setCurrentView}) => {
           </Link>
           .
         </span>
-        <Button className="mt-6">Join</Button>
+        <Button className="mt-6" type="submit" disabled={success.status}>{success.status ? 'Created!' : 'Login'}</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Already a member?{" "}

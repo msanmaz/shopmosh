@@ -38,7 +38,7 @@ const Login = ({ setCurrentView }) => {
          const key = window.localStorage.getItem('customer');
          const data = JSON.parse(key)
           router.push(`/account/${data[0].firstName}`)
-        }, 2500);
+        }, 2800);
       } else if (user.data?.customerAccessTokenCreate.customerUserErrors.length >= 1) {
         SetError({ status: true, message: 'Wrong Credentials' })
         SetLoading(false)
@@ -49,14 +49,6 @@ const Login = ({ setCurrentView }) => {
 
   })
 
-  React.useEffect(()=> {
-    console.log('render')
-    const fetchCats = async () => {
-      const data = await getCustInfo(accessToken.accessToken)
-      setCustomerInfo(data)
-     }
-     fetchCats()
-  },[accessToken])
 
   return (
     <>

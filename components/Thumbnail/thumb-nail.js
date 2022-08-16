@@ -13,7 +13,7 @@ const Thumbnail = ({
   return (
     <div
       className={clsx("relative aspect-[29/34]", {
-        "w-[100px]": size === "xs",
+        "w-[80px]": size === "xs",
         "w-[180px]": size === "small",
         "w-[290px]": size === "medium",
         "w-[440px]": size === "large",

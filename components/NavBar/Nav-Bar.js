@@ -12,6 +12,7 @@ import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
 import { repeat } from "../../lib/helpers"
 import SkeletonProductPreview from "../Skeletons/SkeletonProductPreview"
+import Modal from "../purchaseModal/purchase_modal"
 
 const Nav = () => {
   const { accessToken, collection,wishList,customerInfo } = useContext(CartContext)
@@ -109,6 +110,7 @@ const Nav = () => {
               </div>
 
               <CartDropdown />
+              <Modal/>
             </div>
           </nav>
           <MobileMenu customer={customerInfo} accessToken={accessToken} />

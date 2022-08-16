@@ -1,6 +1,7 @@
 import React from 'react'
 import { MobileMenuProvider } from "../context/mobile-menu-context"
 import { CartDropdownProvider } from "../context/cart-dropdown-context"
+import { ModalProvider } from '../context/modal-context'
 import ShopProvider from '../context/shopContext'
 import '../styles/globals.css'
 import { Router } from 'next/router'
@@ -39,13 +40,18 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {loading ? <div className='w-full h-screen flex flex-col justify-center items-center'>< div className='text-4xl bebas font-bold' > RELAVOUX</div > <BarLoader color={'#000000'} loading={loading} cssOverride={override} size={150} /> </div > :
-        <ShopProvider>
-          <CartDropdownProvider>
-            <MobileMenuProvider>
-              {getLayout(<Component {...pageProps} />)}
-            </MobileMenuProvider>
-          </CartDropdownProvider>
-        </ShopProvider>
+        <ModalProvider>
+          <ShopProvider>
+            <CartDropdownProvider>
+
+              <MobileMenuProvider>
+                {getLayout(<Component {...pageProps} />)}
+              </MobileMenuProvider>
+            </CartDropdownProvider>
+
+          </ShopProvider>
+        </ModalProvider>
+
       }
     </>
 

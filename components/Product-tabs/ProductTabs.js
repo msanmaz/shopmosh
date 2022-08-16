@@ -59,28 +59,23 @@ const ProductInfoTab = ({ product }) => {
         <div className="flex flex-col gap-y-4">
           <div>
             <span className="font-semibold">Material</span>
-            <p>{product?.origin_country ? product.origin_country : "-"}</p>
+            <p>{product?.Country ? product.Country.value : "-"}</p>
           </div>
           <div>
             <span className="font-semibold">Country of origin</span>
-            <p>{product?.origin_country ? product.origin_country : "-"}</p>
+            <p>{product?.Material ? product.Material.value : "-"}</p>
           </div>
-          <div>
-            <span className="font-semibold">Type</span>
-            <p>{product?.type ? product.type.value : "-"}</p>
-          </div>
+
         </div>
         <div className="flex flex-col gap-y-4">
-          <div>
-            <span className="font-semibold">Weight</span>
-            <p>{product?.weight ? `${product.weight} g` : "-"}</p>
+        <div>
+            <span className="font-semibold">Type</span>
+            <p>{product?.Type ? product.Type.value : "-"}</p>
           </div>
           <div>
             <span className="font-semibold">Dimensions</span>
             <p>
-              {product?.length && product.width && product.height
-                ? `${product?.length}L x ${product.width}W x ${product.height}H`
-                : "-"}
+              {product?.S1ize && product.Size.value}
             </p>
           </div>
         </div>
