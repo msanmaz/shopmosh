@@ -107,11 +107,21 @@ const Modal = () => {
                       {formatter.format(cartTotal)}
                     </span>
                   </div>
+                  <div className="w-full flex flex-row">
+                  <div className="w-1/2">
                   <Link href="/cart" passHref>
                     <a>
                       <Button>Go to bag</Button>
                     </a>
                   </Link>
+                  </div>
+                  <div className="w-1/2 px-[0.5rem]">
+                    <a>
+                      <Button>Close</Button>
+                    </a>
+                  </div>
+                  </div>
+
                 </div>
               </>
             ) : (

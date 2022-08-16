@@ -93,7 +93,7 @@ const Nav = () => {
             </div>
 
 
-            <div className="flex items-center futuraMedium uppercase gap-x-6 h-full flex-1 basis-0 justify-end">
+            <div className="flex items-center futuraMedium uppercase md:gap-x-6 h-full flex-1 basis-0 justify-end">
 
               <div className="hidden small:flex items-center gap-x-6 h-full">
 
@@ -102,7 +102,7 @@ const Nav = () => {
                 </Link>
               </div>
 
-              <div className="hidden small:flex items-center gap-x-6 h-full">
+              <div className="hidden small:flex items-center md:gap-x-6  h-full">
 
                 <Link href='/wishlist'>
                 {`Wish List (${wishListLength})`}

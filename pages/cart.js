@@ -94,6 +94,6 @@ export default CartTemplate
 
 
 CartTemplate.getLayout = (page) => {
-    return <Layout title={'HOME'}>{page}</Layout>
+    return <Layout>{page}</Layout>
   }
   

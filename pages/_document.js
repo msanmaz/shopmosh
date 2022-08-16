@@ -8,7 +8,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
                  <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-                <meta httpEquiv="Content-Type" content="text/html; charset=ISO-8859-1" />
                 <meta name="description" content="Designer Hoodies/Tshirts" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.relavoux.com" />
