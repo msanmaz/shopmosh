@@ -54,7 +54,7 @@ const ProductTabs = ({ product }) => {
 
 const ProductInfoTab = ({ product }) => {
   return (
-    <Tab.Panel className="text-small-regular py-8">
+    <Tab.Panel className="text-small-regular  py-8">
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>

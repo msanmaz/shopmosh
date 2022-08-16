@@ -87,7 +87,7 @@ const Modal = () => {
         >
           <Popover.Panel
             static
-            className="small:block absolute top-[calc(100%+1px)] itemodal right-0 bg-white border-x border-b border-gray-200 w-[338px] text-gray-900"
+            className="small:block absolute top-[calc(100%+1px)] itemodal right-0 bg-white border-x border-b border-gray-200 w-[24rem] text-gray-900"
           >
             <div className="p-4 flex items-center justify-center">
               <h3 className="text-large-semi">Shopping Bag</h3>
@@ -117,7 +117,7 @@ const Modal = () => {
                   </div>
                   <div className="w-1/2 px-[0.5rem]">
                     <a>
-                      <Button onClick={close}>Close</Button>
+                      <Button variant={'secondary'} onClick={close}>Close</Button>
                     </a>
                   </div>
                   </div>

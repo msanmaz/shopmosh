@@ -102,8 +102,8 @@ const ProductForm = ({ product, variants }) => {
                     <span className="label-text bebas">Qty.</span>
                   </label>
                   <label className="input-group  justify-end">
-                    <span className='bg-white border border-gray-300' onClick={() => plusQuantity()}
-                    > <Plus size={15} /></span>
+                    <span className='bg-white border !w-[3rem] border-gray-300' onClick={() => plusQuantity()}
+                    > <Plus size={10} /></span>
                     <input
                       readOnly
                       type="number"
@@ -114,8 +114,8 @@ const ProductForm = ({ product, variants }) => {
                       step="1"
                       value={quantity}
 
-                      className="input h-[2rem] md:h-[3rem] md:w-[25%] input-bordered w-[22%]"
-                    />                <span className={`bg-white border border-gray-300 ${quantity === 0 ? 'btn-disabled' : ''}`} onClick={() => minusQuantity()}
+                      className="input h-[2rem] md:h-[3rem] md:w-[25%] input-bordered w-[25%]"
+                    />                <span className={`bg-white border !w-[3rem] border-gray-300 ${quantity === 0 ? 'btn-disabled' : ''}`} onClick={() => minusQuantity()}
                     > <Minus size={15} /></span>
                   </label>
                 </div>
