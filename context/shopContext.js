@@ -12,6 +12,7 @@ export default function ShopProvider({ children }) {
   const [checkoutId, setCheckoutId] = useState('')
   const [checkoutUrl, setCheckoutUrl] = useState('')
   const [drawer, setDrawer] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [customerInfo, setCustomerInfo] = useState(() => {
     if (typeof window !== 'undefined') {
       const stickyValue = window.localStorage.getItem('customer');
@@ -86,18 +87,18 @@ export default function ShopProvider({ children }) {
 
 
   async function addToCart(newItem) {
-
     if (cart.length === 0) {
+      setLoading(prevState => !prevState)
       setCart([...cart,newItem])
-
-
       const checkout = await createCheckout(newItem.variantId, newItem.variantQuantity)
 
       setCheckoutId(checkout.id)
       setCheckoutUrl(checkout.webUrl)
       timedOpen()
+      setLoading(prevState => !prevState)
       localStorage.setItem("checkout_id", JSON.stringify([newItem, checkout]))
     } else {
+      setLoading(prevState => !prevState)
       let newCart = [...cart]
       let added = false
       newCart.map(item => {
@@ -113,9 +114,10 @@ export default function ShopProvider({ children }) {
       }else {
         newCartWithItem = [...newCart,newItem]
       }
-
+    
       setCart(newCartWithItem)
       const newCheckout = await updateShopifyCheckout(newCartWithItem,checkoutId )
+      setLoading(false)
       timedOpen()
       localStorage.setItem("checkout_id", JSON.stringify([newCartWithItem, newCheckout]))
     }
@@ -148,8 +150,7 @@ export default function ShopProvider({ children }) {
       setCartOpen,
       addToCart,
       checkoutUrl,
-      setDrawer,
-      drawer,
+      loading,
       wishList,
       setWishList,
       accessToken,

@@ -7,14 +7,14 @@ import Plus from 'common/icons/plus'
 import ProductTabs from '../Product-tabs/ProductTabs'
 import clsx from 'clsx'
 import Button from '../../common/button/CommonButton'
-
+import Spinner from '../../common/Spinner/Index'
 const ProductForm = ({ product, variants }) => {
   const [quantity, setQuantity] = useState(1)
   const [variantId, setVariantId] = useState(variants[0].node.id)
   const [variant, setVariant] = useState(variants[0])
-  const { addToCart } = useContext(CartContext)
+  const { addToCart,loading } = useContext(CartContext)
 
-
+  console.log(loading,'loading')
   function handleSizeChange(e) {
     setVariantId(e)
     // send back size change
@@ -130,7 +130,7 @@ const ProductForm = ({ product, variants }) => {
 
         <Button
           onClick={() => handleAddToCart()}
-        >Add To Cart
+        >{loading ? <Spinner/> : 'Add To Cart'}
         </Button>
       </div>
     </>
