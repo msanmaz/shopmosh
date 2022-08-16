@@ -43,7 +43,7 @@ const WishListTable = ({ items }) => {
                         <div key={i} className='border-b md:px-[1rem]'>
                             <div className='flex flex-wrap wish-item md:flex-row w-full py-[1rem]'>
                                 <div className='flex w-[80%] md:w-[70%] justify-start px-[1rem]'>
-                                    <div className='border w-auto border-gray-300 py-[0.5rem] px-[0.5rem] max-h-auto '>
+                                    <div className='border w-auto border-gray-300 py-[0.5rem] px-[0.5rem] max-h-[120px] '>
                                         <Thumbnail className='object-contain bg-center' size='xs'  thumbnail={product.node.images.edges[0].node.originalSrc} alt="Avatar Tailwind CSS Component" />
                                     </div>
 
@@ -59,13 +59,13 @@ const WishListTable = ({ items }) => {
                                 </div>
 
 
-                                <div className='w-[80%] mx-[6rem] md:mx-auto md:w-[20%]'>
+                                <div className='w-[80%] mx-[7.4rem] md:mx-auto md:w-[20%]'>
                                     <div className='bebas text-xl text-[#161616]'>{formatter.format(product.node.priceRange.minVariantPrice.amount)}</div>
 
                                 </div>
 
 
-                                <div className='absolute md:relative top-[30%] right-[1rem]'>
+                                <div className='absolute md:relative top-[50%] right-[3rem]'>
                                     <button onClick={() => removeAccount(product.node.id)} className="btn btn-square btn-outline w-[2rem] !h-[2rem] !min-h-[2rem]">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                     </button>
