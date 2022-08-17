@@ -23,5 +23,5 @@ Tailwindcss
 ContextApi
 React
 
-I have to develop the UI by myself with figma
+I have develop the UI by myself with figma
 https://www.figma.com/file/aM8kYfc27MHJ7MWNz3SlDu/Relavoux?node-id=0%3A1
