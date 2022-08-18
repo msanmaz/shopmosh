@@ -40,6 +40,9 @@ module.exports = {
       },
     },
   },
+  daisyui:{
+    themes:false,
+  },
   plugins: [require("daisyui"),
   plugin(function ({ addUtilities }) {
     addUtilities({
