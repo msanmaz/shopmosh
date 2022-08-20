@@ -13,8 +13,13 @@ const Footer = () => {
   </div> 
   <div>
     <span className="footer-title bebas">Company</span> 
-    <a className="link  futuraMedium text-[#333333] text-xs uppercase link-hover">About us</a> 
-    <a className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Contact</a> 
+    <Link href='/aboutus'>
+    <div className="link  futuraMedium text-[#333333] text-xs uppercase link-hover">About us</div>
+
+    </Link>
+    <Link href='/contact'>
+    <div className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Contact</div> 
+    </Link>
     <a className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Jobs</a> 
     <a className="link futuraMedium text-[#333333] text-xs  uppercase link-hover">Press kit</a>
   </div> 
