@@ -54,7 +54,7 @@ const ProductForm = ({ product, variants }) => {
   return (
     <>
       <div className='flex flex-col px-4 py-[1rem] md:mx-[1rem]'>
-        <div className='bebas text-4xl flex justify-center'>{product.title}</div>
+        <div className='bebas text-2xl md:text-4xl flex justify-center'>{product.title}</div>
         <div className='bebeasBook text-xl flex justify-center py-4'>Price: <span className='!bebas pl-4 text-xl'>{formatter.format(product.variants.edges[0].node.priceV2.amount)}</span></div>
         <div className='flex flex-row'>
 
@@ -98,10 +98,10 @@ const ProductForm = ({ product, variants }) => {
             <div className="flex flex-col justify-end">
               <div className=''>
                 <div className="form-control">
-                  <label className="label justify-center">
+                  <label className="label !pt-0 justify-center">
                     <span className="label-text bebas">Qty.</span>
                   </label>
-                  <label className="input-group  justify-end">
+                  <label className="input-group pt-[0.5rem] justify-end">
                     <span className='bg-white border !w-[3rem] border-gray-300' onClick={() => plusQuantity()}
                     > <Plus size={10} /></span>
                     <input

@@ -53,10 +53,10 @@ const ProductCard = ({ product }) => {
 
         <Transition
           show={isHovering1}
-          enter="ease duration-700"
-          enterFrom="opacity-0"
+          enter="ease duration-300"
+          enterFrom="opacity-50"
           enterTo="opacity-100"
-          leave="ease duration-700"
+          leave="ease duration-300"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
@@ -66,12 +66,12 @@ const ProductCard = ({ product }) => {
 
         <Transition show={isHovering}>
           <Transition.Child
-            enter="ease-in-out duration-700"
-            enterFrom="opacity-0"
+            enter="ease-in-out duration-200"
+            enterFrom="opacity-50"
             enterTo="opacity-100"
-            leave="ease-in-out duration-700"
+            leave="ease-in-out duration-200"
             leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            leaveTo="opacity-50"
           >
         <Thumbnail images={originalSrc_Second?.originalSrc} size='full'/>
 

@@ -74,7 +74,7 @@ const Modal = () => {
 
   return (
     <div className="h-full z-50">
-      <Popover className="relative h-full">
+      <Popover className="h-full">
         <Transition
           show={state}
           as={Fragment}
@@ -87,7 +87,7 @@ const Modal = () => {
         >
           <Popover.Panel
             static
-            className="small:block absolute top-[calc(100%+1px)] right-[calc(100%-2.1rem)] w-[390px] bg-white border-x border-b border-gray-200 text-gray-900"
+            className="small:block absolute top-[calc(100%-1px)] right-[0px] w-full md:w-[390px] bg-white border-x border-b border-gray-200 text-gray-900"
           >
             <div className="p-4 flex items-center justify-center">
               <h3 className="text-large-semi">Shopping Bag</h3>
