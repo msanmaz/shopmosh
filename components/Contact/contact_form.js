@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
-
+import clsx from 'clsx'
 const ContactForm = () => {
     const [authError, setAuthError] = useState(undefined)
     const [loading, SetLoading] = useState(false)
@@ -72,15 +72,13 @@ const ContactForm = () => {
 
  </div>
 
-        <Input
-          label="Message"
-          {...register("message", {
-            required: "Message is required",
-          })}
-          type="textarea"
-          autoComplete="new-password"
-          errors={errors}
-        />
+ <textarea
+                    name="Message"
+                    placeholder="Message"
+                    className={clsx(
+                      "pt-4 pb-1 block w-full px-4 mt-0 bg-transparent border appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200"
+                    )}
+                    /> 
       </div>
       {authError && (
         <div>

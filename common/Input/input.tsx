@@ -38,16 +38,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div>
         <div className="relative z-0 w-full text-base-regular">
-          {inputType === 'textarea' ? <textarea
-                    name={name}
-                    placeholder=" "
-                    className={clsx(
-                      "pt-4 pb-1 block w-full px-4 mt-0 bg-transparent border appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200",
-                      {
-                        "border-rose-500 focus:border-rose-500": hasError,
-                      }
-                    )}
-                    {...props}/>  :
+
                     <input
                     type={inputType}
                     name={name}
@@ -61,7 +52,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     {...props}
                     ref={inputRef}
                   />
-          }
+          
 
 
           <label
