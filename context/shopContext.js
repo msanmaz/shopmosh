@@ -41,7 +41,7 @@ export default function ShopProvider({ children }) {
 
   const { timedOpen } = useModalDropDown()
 
-  console.log(cart,'cartinContext')
+
   useEffect(() => {
     if (localStorage.checkout_id) {
       const cartObject = JSON.parse(localStorage.checkout_id)
