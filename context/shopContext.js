@@ -53,6 +53,10 @@ export default function ShopProvider({ children }) {
 
       setCheckoutId(cartObject[1].id)
       setCheckoutUrl(cartObject[1].webUrl)
+
+  console.log(accessToken,'context accesstoken')
+  console.log(customerInfo,'customerInfo context')
+
     }
   }, [])
 

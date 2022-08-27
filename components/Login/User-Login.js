@@ -37,6 +37,7 @@ const Login = ({ setCurrentView }) => {
         localStorage.setItem('user', JSON.stringify(access));
         SetAccessToken(access)
         SetLoading(false)
+        console.log(customerInfo,'custinfo in login')
         setTimeout(() => {
          const key = window.localStorage.getItem('customer');
          const data = JSON.parse(key)
