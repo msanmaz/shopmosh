@@ -9,9 +9,9 @@ My job was build out the UI firstly and follow agile method to power the Storefr
 
 ### Overview
 
-* creating new venues, artists, and creating new shows.
-* searching for venues and artists.
-* learning more about a specific artist or venue.
+* creating new products
+* searching for fashion and design.
+* learning more about a specific product or apparel.
 
 
 ### Tech Stack
