@@ -18,13 +18,13 @@ const endpoints = [
 
     },
     {
-        name: 'Tshirt',
+        name: 'Tshirt & Longsleeves',
         slug: 'Tshirt & Longsleeves',
 
     },
     {
         name: 'Sweatshirt',
-        slug: 'Sweatshirt & Hoodies',
+        slug: 'Sweatshirt',
 
     },
     {

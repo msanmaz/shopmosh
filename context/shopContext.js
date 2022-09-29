@@ -54,8 +54,6 @@ export default function ShopProvider({ children }) {
       setCheckoutId(cartObject[1].id)
       setCheckoutUrl(cartObject[1].webUrl)
 
-  console.log(accessToken,'context accesstoken')
-  console.log(customerInfo,'customerInfo context')
 
     }
   }, [])
@@ -106,7 +104,6 @@ export default function ShopProvider({ children }) {
       let newCart = [...cart]
       let added = false
       newCart.map(item => {
-        console.log(item,'itemformap')
         if (item.variantId === newItem.variantId) {
           item.variantQuantity += newItem.variantQuantity
           added = true

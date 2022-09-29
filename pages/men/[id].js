@@ -61,7 +61,7 @@ export async function getStaticPaths() {
     const data = await readCache()
     const paths = data.products.products.edges.map(item => {
         const id = String(item.node.productType)
-
+        console.log(id,'ids')
         return {
             params: { id }
         }

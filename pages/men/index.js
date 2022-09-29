@@ -6,7 +6,7 @@ import Layout from 'common/Layout/lay-out'
 import Crumbs from '../../common/Crumbs/crumbs-filter'
 import Head from 'next/head'
 const MenCategories = ({ cache }) => {
-
+    console.log(cache)
     return (
         <>
         <Head>
