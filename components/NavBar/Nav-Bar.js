@@ -74,7 +74,7 @@ const Nav = () => {
               </div>
               <div className="md:flex hidden items-center h-full">
                 <Link href="/">
-                  <a className="text-xl-semi bebasBold uppercase">RELAVOUX</a>
+                  <a className="text-xl-semi bebasBold uppercase">MOSH</a>
                 </Link>
               </div>
 
@@ -88,19 +88,19 @@ const Nav = () => {
 
             <div className="flex md:hidden items-center h-full">
               <Link href="/">
-                <a className="text-xl-semi bebasBold uppercase">RELAVOUX</a>
+                <a className="text-xl-semi bebasBold uppercase">MOSH</a>
               </Link>
             </div>
 
 
             <div className="flex items-center futuraMedium uppercase md:gap-x-6 h-full flex-1 basis-0 justify-end">
 
-              <div className="hidden small:flex items-center gap-x-6 h-full">
+              {/* <div className="hidden small:flex items-center gap-x-6 h-full">
 
                 <Link href='/account/login'>
                   <a>Account</a>
                 </Link>
-              </div>
+              </div> */}
 
               <div className="hidden small:flex items-center md:gap-x-6  h-full">
 

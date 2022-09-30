@@ -28,12 +28,6 @@ const endpoints = [
 
     },
     {
-        name: 'Jeanshosen',
-        slug: 'Jeanshosen & Jogger',
-
-
-    },
-    {
         name: 'All',
         slug: 'All',
     },
