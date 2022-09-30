@@ -20,7 +20,7 @@ const SlideGallery = ({ products }) => {
     return (
       <>
 
-        <div className="flex w-full flex-col my-[2rem]">
+        <div className="flex w-full flex-col md:pl-0 pl-[1rem] my-[0.5rem] md:my-[2rem]">
   
           <div className="flex w-full">
   
