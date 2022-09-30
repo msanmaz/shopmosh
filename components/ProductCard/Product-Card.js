@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
     setTimeout(() => {
       setAdded({ message: "Speichern!", show: false });
     }, 2000);
-  }, [wishList]);
+  }, [wishList,product,setWishList]);
 
 
 

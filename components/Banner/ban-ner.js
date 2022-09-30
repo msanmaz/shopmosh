@@ -48,7 +48,7 @@ const Banner = () => {
                         <div className='w-full sm:w-[58.33%] px-4 md:px-[2rem]'>
 
                             <div className='mb-[1rem] sm:mb-[2rem] md:mb-[3rem]'>
-                                <span className='heading leading-none text-[2.5rem] sm:text-[2.66rem] md:text-[2.66rem] lg:text-[5.5rem]'>WE'RE CHANGING THE WAY THINGS GET MADE</span>
+                                <span className='heading leading-none text-[2.5rem] sm:text-[2.66rem] md:text-[2.66rem] lg:text-[5.5rem]'>WE&apos;RE CHANGING THE WAY THINGS GET MADE</span>
                             </div>
 
                             <div className='flex flex-row items-center justify-start -ml-[2rem] flex-wrap md:flex-nowrap'>
@@ -56,7 +56,7 @@ const Banner = () => {
                                     <div className='mb-[2rem] sm:mb-0'>
                                         <div className='mb-[1rem] uppercase font-semibold text-[1.2rem] md:text-[1.5rem]'>MISSION</div>
                                         <p className='text-[1rem] inline pr-1'>
-                                            We're on a mission to empower creative independence in a commercial world.
+                                            We&apos;re on a mission to empower creative independence in a commercial world.
                                         </p>
                                         <button className='_3mEi7 p-1 uppercase text-center relative border-none outline-none bg-transparent cursor-pointer rounded-md _16ruh _2pNei text-[0.6rem] default _2Feen'>
                                             more
@@ -67,7 +67,7 @@ const Banner = () => {
                                     <div className='mb-[2rem] sm:mb-0'>
                                         <div className='mb-[1rem]  uppercase font-semibold text-[1.2rem] md:text-[1.5rem]'>SUSTAINABILITY</div>
                                         <p className='text-[1rem] inline pr-1'>
-                                            We're on a mission to empower creative independence in a commercial world.
+                                            We&apos;re on a mission to empower creative independence in a commercial world.
                                         </p>
                                         <button className='_3mEi7 p-1 uppercase text-center relative border-none outline-none bg-transparent cursor-pointer rounded-md _16ruh _2pNei text-[0.6rem] default _2Feen'>
                                             more

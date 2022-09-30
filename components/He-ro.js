@@ -84,7 +84,7 @@ function HeroSecond() {
                                                 </h2>
                                                 <div className='flex items-end'>
                                                     <p className='text-sm bebas text-gray-300 inline pr-1'>
-                                                        <span>Shop our curated edit of products we can't get enough of.</span>
+                                                        <span>Shop our curated edit of products we can&apos;t get enough of.</span>
                                                     </p>
                                                 </div>
 
