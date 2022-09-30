@@ -45,7 +45,7 @@ const SlideGallery = ({ products }) => {
             ref={swiperRef}
             grabCursor={true}
           >
-            {products.products.products.edges.map(product => <SwiperSlide key={product.id}> <ProductCard product={product} key={product.id} /> </SwiperSlide>)}
+            {products.products.products.edges.map(product => <SwiperSlide id='gallery-items' key={product.id}> <ProductCard height={'14rem'} product={product} key={product.id} /> </SwiperSlide>)}
   
   
           </Swiper>

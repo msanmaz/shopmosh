@@ -7,7 +7,7 @@ const Contact = () => {
 <>
 <div className='w-full flex flex-col md:flex-row'>
 <div className='flex'>
-<Image src='/contact.jpeg' width={1000} height={500} className="bg-center object-contain" />
+<Image src='/contact.jpeg' alt='phone image' width={1000} height={500} className="bg-center object-contain" />
 </div>
 
 <div className='flex w-full px-[2rem] md:pr-[6rem] md:justify-end'>

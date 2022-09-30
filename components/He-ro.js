@@ -53,8 +53,8 @@ function HeroSecond() {
     return (
         <>
             <div className='pb-[95%] h-0 relative bg-black flex flex-col justify-between md:h-[70vh] md:p-0'>
-                <div className='z-10 pt-12'>
-                    <div className='_3Rh31 _3HsKn w-full mx-auto px-2 md:px-5 max-w-[2000px]'>
+                <div className='z-10 pt-[5rem]'>
+                    <div className='_3Rh31 _3HsKn w-full mx-auto md:px-5 max-w-[2000px]'>
                         <div className='w-full' style={{ maxWidth: '614px' }}>
                             <div className='py-3'>
                                 <h1 className='heading px-[0.8rem] !bebas uppercase text-2xl md:text-xl lg:text-[3rem] md:leading-[1.15] text-white'>
@@ -76,7 +76,7 @@ function HeroSecond() {
                             <div className={`mx-0 flex flex-col justify-end oVl3V absolute inset-0  pointer-events-none`}>
                                 <div ref={slideRef} id='herob'  className='_2MKKw !opacity-50 bg-cover bg-center absolute inset-0' style={{ backgroundImage: `url(${images[currentIndex]})` }}></div>
                                 <div className=''>
-                                    <div className='_3Rh31 _3HsKn w-full mx-auto px-2 md:px-[2rem] max-w-[2000px]'>
+                                    <div className='_3Rh31 _3HsKn w-full mx-auto px-[1rem] md:px-[2rem] max-w-[2000px]'>
                                         <div className='py-2 sm:py-4 md:py-8'>
                                             <div className='w-full' style={{ maxWidth: '460px' }}>
                                                 <h2 className='heading bebas text-m sm:text-l md:text-[2rem] text-white'>

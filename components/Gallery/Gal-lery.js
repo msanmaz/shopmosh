@@ -36,9 +36,9 @@ const Gallery = ({ product }) => {
     return (
         <div className='parent'>
 
-            <div className='div1' onClick={handler} > <Image src={nextTwo[0]} width={150} className='object-contain' height={150} /></div>
-            <div className='div2' onClick={handlerTwo}  > <Image src={nextTwo[1]} width={150} height={150} className='object-contain' /></div>
-            <div className='div3'  > <Image src={nextTwo[0]} width={150} height={150} className='object-contain' /></div>
+            <div className='div1' onClick={handler} > <Image src={nextTwo[0]}  alt='product-image' width={150} className='object-contain' height={150} /></div>
+            <div className='div2' onClick={handlerTwo}  > <Image src={nextTwo[1]} alt='product-image' width={150} height={150} className='object-contain' /></div>
+            <div className='div3'  > <Image src={nextTwo[0]} alt='product-image' width={150} height={150} className='object-contain' /></div>
 
             <div className='h-full w-full div4'>
 

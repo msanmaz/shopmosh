@@ -5,7 +5,7 @@ const LeftSide = () => {
     <>
 
 <div className='w-full flex'>
-    <Image src='/male_bg.jpg' width={800} height={500} className='bg-center object-cover'/>
+    <Image src='/male_bg.jpg' alth='showcase image' width={800} height={500} className='bg-center object-cover'/>
 
 </div>
 

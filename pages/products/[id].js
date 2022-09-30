@@ -17,6 +17,8 @@ const ProductDetail = ({ products }) => {
     const [currentCategory, setCurrentCategory] = React.useState(router.query.id)
     const size = useWindowSize()
     const title = `RLVX | ${products.title}`
+
+    
     return (
         <>
         <Head>

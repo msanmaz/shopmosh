@@ -69,7 +69,7 @@ const Modal = () => {
       }
 
     });
-  })
+  },[cart,cartTotal])
 
 
   return (
