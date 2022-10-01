@@ -1,9 +1,13 @@
 import React from 'react'
 import Layout from '/common/Layout/lay-out'
+import Head from 'next/head'
 
 const ReturnPolicy = () => {
   return (
     <>
+      <Head>
+        <title>MOSH | Shipping & Return</title>
+      </Head>
       <div className='w-full h-full flex flex-col px-2 md:px-[4rem]'>
 
         <div className='flex justify-center md:pt-[4rem] futuraMedium font-semibold text-4xl'>Shipping & Return</div>

@@ -1,7 +1,6 @@
 import Layout from "common/Layout/lay-out"
 import Head from "next/head"
 import Link from "next/link"
-import { ReactElement } from "react"
 
 const NotFound = () => {
   return (

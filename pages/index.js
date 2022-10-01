@@ -12,6 +12,9 @@ export default function Home({cache}) {
 
   return (
     <>
+          <Head>
+        <title>MOSH | HOME</title>
+      </Head>
       <HeroSecond/>
       <SlideGallery products={cache}/>
       <Banner/>

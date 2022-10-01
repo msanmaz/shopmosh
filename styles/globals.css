@@ -309,3 +309,10 @@
   and (orientation: landscape) { 
 
 }
+
+
+._1GHbd {
+  opacity: 1;
+  pointer-events: auto;
+  transition-duration: .5s; ;
+}

@@ -7,7 +7,6 @@ const Footer = () => {
   <div>
     <span className="footer-title bebas">Services</span> 
     <Link href='/login'><div className="link text-xs uppercase futuraMedium text-[#333333] link-hover">My Account</div></Link> 
-    <a className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Design</a> 
     <a className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Marketing</a> 
     <a className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Advertisement</a>
   </div> 
@@ -19,8 +18,6 @@ const Footer = () => {
     <Link href='/contact'>
     <div className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Contact</div> 
     </Link>
-    <a className="link  futuraMedium text-[#333333] text-xs  uppercase link-hover">Jobs</a> 
-    <a className="link futuraMedium text-[#333333] text-xs  uppercase link-hover">Press kit</a>
   </div> 
   <div>
     <span className="footer-title bebas">Legal</span> 
@@ -30,7 +27,6 @@ const Footer = () => {
      <Link href='/privacypolicy'>
        <div className="link futuraMedium text-[#333333] text-xs  uppercase link-hover"> Privacy Policy</div>
      </Link>
-    <a className="link  futuraMedium text-[#333333] text-xs  uppercase !font-[400] link-hover">Cookie policy</a>
   </div> 
   <div>
     <span className="footer-title bebas">Newsletter</span> 

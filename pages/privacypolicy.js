@@ -1,9 +1,13 @@
 import React from 'react'
 import Layout from '/common/Layout/lay-out'
+import Head from 'next/head'
 
 const PrivacyPolicy = () => {
     return (
         <>
+              <Head>
+        <title>MOSH | Privacy Policy</title>
+      </Head>
             <div className='w-full h-full flex flex-col md:py-6 md:px-[4rem]'>
 
                 <div className='flex justify-center px-2  md:pt-[4rem] futuraMedium font-semibold text-4xl'>Privacy Policy</div>

@@ -27,10 +27,12 @@ const MenCategories = ({ cache }) => {
 
     }, [data, router.query.id])
 
+    const name = router.query.id
+
     return (
         <>
         <Head>
-        <title>RLVX | {router.query.id}</title>
+        <title>RLVX | {name}</title>
 
         </Head>
         <Crumbs/>

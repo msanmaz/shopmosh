@@ -6,7 +6,7 @@ import {formatter} from 'lib/helpers'
 import Link from 'next/link'
 import Button from 'common/button/CommonButton'
 import Layout from "../common/Layout/lay-out"
-
+import Head from "next/head"
 const CartTemplate = () => {
     const { cart,checkoutUrl  } = useContext(CartContext)
     let cartQuantity = 0
@@ -31,6 +31,10 @@ const CartTemplate = () => {
     }
 
     return (
+        <>
+              <Head>
+        <title>MOSH | CART</title>
+      </Head>
         <div className="bg-gray-50 md:py-12">
             <div className="content-container !px-0 md:!px-8">
                 {cart.length ? (
@@ -87,6 +91,7 @@ const CartTemplate = () => {
                 )}
             </div>
         </div>
+        </>
     )
 }
 

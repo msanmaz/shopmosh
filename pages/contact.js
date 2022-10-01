@@ -2,9 +2,13 @@ import React from 'react'
 import ContactForm from 'components/Contact/contact_form'
 import Layout from 'common/Layout/lay-out'
 import Image from 'next/image'
+import Head from 'next/head'
 const Contact = () => {
   return (
 <>
+<Head>
+        <title>MOSH | Contact</title>
+      </Head>
 <div className='w-full flex flex-col md:flex-row'>
 <div className='flex'>
 <Image src='/contact.jpeg' alt='phone image' width={1000} height={500} className="bg-center object-contain" />
