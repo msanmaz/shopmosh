@@ -17,6 +17,7 @@ class MyDocument extends Document {
             content="MOSH | das Label für Oversize T-Shirts, Oversize Hoodies und Oversize Sweatshirts" />
           <meta property="og:locale" content="en_US" />
           <meta property="og:site_name" content="MOSH" />
+          <meta name="facebook-domain-verification" content="mpcvva50tgvraocluv3s7inbhbd1oc" />
           <link rel="apple-touch-icon" sizes="180x180" href="/public/static/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/public/static/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/public/static/favicon-16x16.png" />
