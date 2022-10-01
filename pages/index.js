@@ -12,8 +12,6 @@ export default function Home({cache}) {
 
   return (
     <>
-      <Head>        <title>MOSH | HOME</title>
-      </Head>
       <HeroSecond/>
       <SlideGallery products={cache}/>
       <Banner/>
@@ -26,7 +24,7 @@ Home.getLayout = (page) => {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const cache = await readCache()
 
   return {

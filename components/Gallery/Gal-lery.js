@@ -55,7 +55,7 @@ const Gallery = ({ product }) => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <Thumbnail size='full'  thumbnail={nextTwo[0]} />
+                        <Thumbnail size='full' bg={'bg-gray-200'}  thumbnail={nextTwo[0]} />
                     </Transition>
                     <Transition
                         as='div'
@@ -68,7 +68,7 @@ const Gallery = ({ product }) => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <Thumbnail size='full' className='object-cover' thumbnail={nextTwo[1]} layout='fill' objectFit='cover' />
+                        <Thumbnail size='full' bg={'bg-gray-200'} thumbnail={nextTwo[1]} />
                     </Transition>
 
 

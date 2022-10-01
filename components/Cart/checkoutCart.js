@@ -1,9 +1,5 @@
-import useEnrichedLineItems from "@lib/hooks/use-enrich-line-items"
-import DiscountCode from "@modules/checkout/components/discount-code"
-import SkeletonCartPage from "@modules/skeletons/templates/skeleton-cart-page"
 import EmptyCartMessage from "../components/empty-cart-message"
 import ItemsTemplate from "./items"
-import Summary from "./summary"
 
 const CartTemplate = ({ cart }) => {
 

@@ -1,16 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { formatter } from '/lib/helpers'
-import { GiHearts } from 'react-icons/gi'
-import { BsEyeFill } from 'react-icons/bs'
+import Heart from '/common/icons/heart.tsx'
+import EyeOff from '/common/icons/eye-off.tsx'
 import { Transition } from '@headlessui/react'
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../../context/shopContext'
 import Thumbnail from '../Thumbnail/thumb-nail'
 import { useEffect, useCallback } from 'react'
-import { TiTick } from 'react-icons/ti'
-import { IconContext } from "react-icons";
+import  Refresh  from '/common/icons/refresh.tsx'
 
 const ProductCard = ({ product,height }) => {
   const { wishList, setWishList, } = useContext(CartContext)
@@ -89,17 +88,16 @@ const ProductCard = ({ product,height }) => {
             >
               <div className='flex flex-row h-[3rem] w-full'>
                 <div className='w-1/2 px-4 justify-start flex flex-row items-center'>
-                  <BsEyeFill size={20} />
+                  <EyeOff size={20} />
                   <div className='bebas text-gray-500 px-4'>Schnellansicht</div>
                 </div>
-                <IconContext.Provider value={{ color: `${added.show ? 'green' : 'black'}`}}>
+
                   <div onClick={handleClick} className='w-1/2 justify-end px-2 flex flex-row items-center'>
-                    {added.show ? <TiTick size={20} /> : <GiHearts size={20} />}
+                    {added.show ? <Refresh size={20} /> : <Heart size={20} />}
                     <div className={`${added.show ? 'text-green-700 bebas px-2' : 'text-gray-500 bebas px-4'}  `}>{added.message}</div>
 
                   </div>
 
-                </IconContext.Provider>
               </div>
 
 

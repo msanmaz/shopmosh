@@ -58,7 +58,7 @@ const Banner = () => {
                                         <p className='text-[1rem] futuraMedium inline pr-1'>
                                             We&apos;re on a mission to empower creative independence in a commercial world.
                                         </p>
-                                        <button className='_3mEi7 p-1 uppercase text-center relative border-none outline-none bg-transparent cursor-pointer rounded-md _16ruh _2pNei text-[0.6rem] default _2Feen'>
+                                        <button className='p-1 uppercase text-center relative border-gray-400 border outline-none bg-transparent cursor-pointer rounded-md text-[0.55rem]'>
                                             more
                                         </button>
                                     </div>
@@ -66,10 +66,10 @@ const Banner = () => {
                                 <div className='w-full sm:w-1/2 px-[2rem]'>
                                     <div className='mb-[2rem] sm:mb-0'>
                                         <div className='mb-[1rem]  uppercase font-semibold text-[1.2rem] bebasBold md:text-[1.5rem]'>SUSTAINABILITY</div>
-                                        <p className='text-[1rem] futuraMedium inline pr-1'>
+                                        <p className='text-[1rem] pb-2 futuraMedium inline pr-1'>
                                             We&apos;re on a mission to empower creative independence in a commercial world.
                                         </p>
-                                        <button className='_3mEi7 p-1 uppercase text-center relative border-none outline-none bg-transparent cursor-pointer rounded-md _16ruh _2pNei text-[0.6rem] default _2Feen'>
+                                        <button className='p-1 uppercase text-center relative border border-gray-400 outline-none bg-transparent cursor-pointer rounded-md text-[0.55rem]'>
                                             more
                                         </button>
 

@@ -7,12 +7,13 @@ import React from "react"
 const Thumbnail = ({
   thumbnail,
   images,
+  bg,
   size = "small",
 }) => {
   const initialImage = thumbnail || images
   return (
     <div
-      className={clsx("relative aspect-[34/34]", {
+      className={clsx(`relative aspect-[34/34] ${bg}`, {
         "w-[80px]": size === "xs",
         "w-[180px]": size === "small",
         "w-[290px]": size === "medium",

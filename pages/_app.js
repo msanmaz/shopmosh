@@ -11,8 +11,10 @@ import BarLoader from "react-spinners/BarLoader";
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout ?? ((page) => page)
-
   const [loading, setLoading] = React.useState(false);
+
+
+
   React.useEffect(() => {
     const start = () => {
       setLoading(true);
@@ -29,6 +31,19 @@ function MyApp({ Component, pageProps }) {
       Router.events.off("routeChangeError", end);
     };
   }, []);
+
+  React.useEffect(() => {
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init('509443064113592')
+        ReactPixel.pageView()
+
+        Router.events.on('routeChangeComplete', () => {
+          ReactPixel.pageView()
+        })
+      })
+  }, [Router.events])
 
   const override = {
     display: "block",

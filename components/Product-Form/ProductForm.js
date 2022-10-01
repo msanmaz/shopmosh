@@ -54,17 +54,17 @@ const ProductForm = ({ product, variants }) => {
   return (
     <>
       <div className='flex flex-col px-4 py-[1rem] md:mx-[1rem]'>
-        <div className='bebas text-2xl md:text-4xl flex justify-center'>{product.title}</div>
-        <div className='bebeasBook text-xl flex justify-center py-4'>Price: <span className='!bebas pl-4 text-xl'>{formatter.format(product.variants.edges[0].node.priceV2.amount)}</span></div>
+        <div className='bebasBold text-2xl md:text-4xl flex justify-center'>{product.title}</div>
+        <div className='futura text-xl flex justify-center py-4'>Price: <span className='!bebas pl-4 text-xl'>{formatter.format(product.variants.edges[0].node.priceV2.amount)}</span></div>
         <div className='flex flex-row'>
 
           {
 
             <fieldset className="md:w-1/2 w-full">
-              <legend className="font-light bebas">Size</legend>
+              <legend className="font-light futuraMedium">Size</legend>
               <div className="inline-flex items-center">
                 {
-                  variants.map(item => {
+                  variants.slice(0,4).map(item => {
                     const checked = variant.node.title === item.node.title
                     return (
                       <label key={item.node.title}>
@@ -99,7 +99,7 @@ const ProductForm = ({ product, variants }) => {
               <div className=''>
                 <div className="form-control">
                   <label className="label !pt-0 justify-center">
-                    <span className="label-text bebas">Qty.</span>
+                    <span className="label-text futuraMedium">Qty.</span>
                   </label>
                   <label className="input-group pt-[0.5rem] justify-end">
                     <span className='bg-white border !w-[3rem] border-gray-300' onClick={() => plusQuantity()}

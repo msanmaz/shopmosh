@@ -10,8 +10,6 @@ import Topbar from "../Topbar/Topbar"
 import CartDropdown from "../CartDropdown/cart-dropdown"
 import { useContext } from 'react'
 import { CartContext } from 'context/shopContext'
-import { repeat } from "../../lib/helpers"
-import SkeletonProductPreview from "../Skeletons/SkeletonProductPreview"
 import Modal from "../purchaseModal/purchase_modal"
 
 const Nav = () => {

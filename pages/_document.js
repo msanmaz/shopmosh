@@ -14,9 +14,9 @@ class MyDocument extends Document {
                 <link rel="shortcut icon" href="/static/favicon.ico" />
                 <meta property="og:image" content="https://www.attilahomes.com/_next/image?url=%2FATTILA(2).svg&w=2048&q=75" />
                 <meta property="og:description"
-                    content="RLVX | das Label für Oversize T-Shirts, Oversize Hoodies und Oversize Sweatshirts" />
+                    content="MOSH | das Label für Oversize T-Shirts, Oversize Hoodies und Oversize Sweatshirts" />
                 <meta property="og:locale" content="en_US" />
-                <meta property="og:site_name" content="RLVX" />
+                <meta property="og:site_name" content="MOSH" />
         </Head>
         <body>
           <Main />
