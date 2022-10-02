@@ -61,7 +61,7 @@ const Banner = () => {
                                 <div className='w-full sm:w-1/2 px-[2rem]'>
                                     <div className='mb-[2rem] sm:mb-0'>
                                         <div className='mb-[1rem] uppercase font-semibold text-[1.2rem] bebasBold md:text-[1.5rem]'>MISSION</div>
-                                        <p className='text-[1rem] futuraMedium inline pr-1'>
+                                        <p className='text-[1rem] calibri inline pr-1'>
                                             We&apos;re on a mission to empower creative independence in a commercial world.
                                         </p>
                                         <button className='p-1 uppercase text-center relative border-gray-400 border outline-none bg-transparent cursor-pointer rounded-md text-[0.55rem]'>
@@ -72,7 +72,7 @@ const Banner = () => {
                                 <div className='w-full sm:w-1/2 px-[2rem]'>
                                     <div className='mb-[2rem] sm:mb-0'>
                                         <div className='mb-[1rem]  uppercase font-semibold text-[1.2rem] bebasBold md:text-[1.5rem]'>SUSTAINABILITY</div>
-                                        <p className='text-[1rem] pb-2 futuraMedium inline pr-1'>
+                                        <p className='text-[1rem] pb-2 calibri inline pr-1'>
                                             We&apos;re on a mission to empower creative independence in a commercial world.
                                         </p>
                                         <button className='p-1 uppercase text-center relative border border-gray-400 outline-none bg-transparent cursor-pointer rounded-md text-[0.55rem]'>
