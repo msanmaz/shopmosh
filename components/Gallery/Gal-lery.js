@@ -40,7 +40,7 @@ const Gallery = ({ product }) => {
             <div className='div2' onClick={handlerTwo}  > <Image src={nextTwo[1]} alt='product-image' width={150} height={150} className='object-contain' /></div>
             <div className='div3'  > <Image src={nextTwo[0]} alt='product-image' width={150} height={150} className='object-contain' /></div>
 
-            <div className='h-full w-full div4'>
+            <div className='h-full px-4 w-full div4'>
 
                     <Transition
                                             as='div'

@@ -55,10 +55,10 @@ const ProductCard = ({ product,height }) => {
 
         <Transition
           show={isHovering1}
-          enter="ease duration-300"
+          enter="ease duration-200"
           enterFrom="opacity-50"
           enterTo="opacity-100"
-          leave="ease duration-300"
+          leave="ease duration-200"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
@@ -68,7 +68,7 @@ const ProductCard = ({ product,height }) => {
 
         <Transition show={isHovering}>
           <Transition.Child
-            enter="ease-in-out duration-200"
+            enter="ease-in-out duration-100"
             enterFrom="opacity-50"
             enterTo="opacity-100"
             leave="ease-in-out duration-200"
@@ -114,7 +114,7 @@ const ProductCard = ({ product,height }) => {
     </div>
 
     <Link href={`/products/${product.node.handle}`}>
-      <div className='flex flex-col justify-center items-center'>
+      <div className='flex cursor-pointer flex-col justify-center items-center'>
         <h3 className="mt-4 md:text-base font-medium text-gray-700 bebeasBook uppercase product-title">{title}</h3>
         <p className="mt-1 bebas text-lg">{formatter.format(price)}</p>
       </div>

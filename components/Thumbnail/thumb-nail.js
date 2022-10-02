@@ -24,14 +24,18 @@ const Thumbnail = ({
       <ImageOrPlaceholder images={initialImage} size={size} />
     </div>
   )
-}
 
+}
+const myLoader = ({ src, width, quality }) => {
+  return <div className="bg-gray-200"></div>
+}
 const ImageOrPlaceholder = ({
   images,
   size,
 })  => {
   return images ? (
     <Image
+      priority
       src={images}
       alt="Thumbnail"
       layout="fill"
