@@ -21,7 +21,10 @@ const MenCategories = ({ cache }) => {
         if (!router.query.id) return data
 
         if (router.query.id === 'All') return data
+        
+        if (router.query.id === 'Sale') return data
 
+        if (router.query.id === 'New In') return data
         // here we return any product who's categories include one with the slug equaling the value of 'currentCategory'
         return data.filter(p => p.node.productType === router.query.id)
 
@@ -58,25 +61,7 @@ MenCategories.getLayout = (page) => {
 }
 
 
-
-export async function getStaticPaths() {
-    const data = await readCache()
-    const paths = data.products.products.edges.map(item => {
-        const id = String(item.node.productType)
-        console.log(id,'ids')
-        return {
-            params: { id }
-        }
-    })
-
-
-    return {
-        paths,
-        fallback: false
-    }
-}
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const cache = await readCache()
 
     return {

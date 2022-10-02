@@ -10,12 +10,12 @@ const PrivacyPolicy = () => {
       </Head>
             <div className='w-full h-full flex flex-col md:py-6 md:px-[4rem]'>
 
-                <div className='flex justify-center px-2  md:pt-[4rem] futuraMedium font-semibold text-4xl'>Privacy Policy</div>
+                <div className='flex justify-center px-2 pt-[2rem]  md:pt-[4rem] futuraMedium font-semibold text-4xl'>Privacy Policy</div>
                 {data.map((item, index) => {
                     return (
                         <div key={item.id} className='flex flex-col py-6 md:py-[1rem] justify-center px-[1.5rem] overflow-x-clip md:px-[10rem]'>
                             <h1 className='futuraMedium text-lg py-[1rem] md:py-[1rem]'>{item.id}</h1>
-                            <p className='futura'>{item.desc}</p>
+                            <p className='calibri'>{item.desc}</p>
                         </div>
                     )
                 }

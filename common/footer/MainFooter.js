@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
    <>
-   <footer className="footer md:align-middle border-t md:justify-items-center p-10 text-base-content">
+   <footer className="footer mt-6 md:align-middle border-t md:justify-items-center p-10 text-base-content">
   <div>
     <span className="footer-title bebas">Services</span> 
     <Link href='/login'><div className="link text-xs uppercase futuraMedium text-[#333333] link-hover">My Account</div></Link> 

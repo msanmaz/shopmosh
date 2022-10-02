@@ -57,6 +57,9 @@
 }
 
 @layer components {
+  .calibri{
+    font-family:'Calibri Regular'
+  }
   .bebas{
     font-family: 'BebasNeue';
   }
@@ -150,6 +153,7 @@
 
 
 
+
 @font-face {
   font-family: 'BebasNeue Light';
   src: url('../public/asset/BebasNue/BebasNeue\ Light.otf');
@@ -157,6 +161,13 @@
 
   font-weight: 400!important;
   }
+
+
+  @font-face {
+    font-family: 'Calibri Regular';
+    src: url('../public/asset/calibri/calibri-regular.ttf');
+    }
+  
 
 
 @font-face {

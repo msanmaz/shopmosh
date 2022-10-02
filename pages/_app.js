@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {loading ? <div className='w-full h-screen flex flex-col justify-center items-center'>< div className='text-4xl bebas font-bold' > RELAVOUX</div > <BarLoader color={'#000000'} loading={loading} cssOverride={override} size={150} /> </div > :
+      {loading ? <div className='w-full h-screen flex flex-col justify-center items-center'>< div className='text-4xl bebas font-bold' > THE MOSH </div > <BarLoader color={'#000000'} loading={loading} cssOverride={override} size={150} /> </div > :
         <ModalProvider>
           <ShopProvider>
             <CartDropdownProvider>

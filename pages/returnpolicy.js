@@ -10,12 +10,12 @@ const ReturnPolicy = () => {
       </Head>
       <div className='w-full h-full flex flex-col px-2 md:px-[4rem]'>
 
-        <div className='flex justify-center md:pt-[4rem] futuraMedium font-semibold text-4xl'>Shipping & Return</div>
+        <div className='flex justify-center md:pt-[4rem] py-[2rem] futuraMedium font-semibold text-4xl'>Shipping & Return</div>
         {dat.map((item, index) => {
           return (
             <div key={item.id} className='flex flex-col justify-center px-[1.5rem] md:px-[10rem]'>
               <h1 className='futuraMedium text-lg py-[2rem]'>{index + item.id}</h1>
-              <p className='futura text-center md:text-start'>{item.desc}</p>
+              <p className='calibri text-start'>{item.desc}</p>
             </div>
           )
         }

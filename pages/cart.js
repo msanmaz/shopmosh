@@ -57,17 +57,17 @@ const CartTemplate = () => {
                                                         <div className="flex flex-col gap-y-1">
                                                             <div className="flex items-center justify-between">
                                                                 <span>Shipping</span>
-                                                                <span>Calculated On Checkout</span>
+                                                                <span>Included</span>
                                                             </div>
                                                             <div className="flex items-center justify-between">
                                                                 <span>Taxes</span>
-                                                                <span>23%</span>
+                                                                <span>23% Included</span>
                                                             </div>
                                                         </div>
                                                         <div className="h-px w-full border-b border-gray-200 border-dashed my-4" />
                                                         <div className="flex items-center justify-between text-base-regular text-gray-900 mb-2">
                                                             <span>Total</span>
-                                                            <span>{formatter.format(per(23,cartTotal)+ cartTotal)}</span>
+                                                            <span>{formatter.format(cartTotal)}</span>
                                                         </div>
                                                     </div>
                                                 </div>

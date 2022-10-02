@@ -13,7 +13,14 @@ import "swiper/css/navigation";
 
 const SlideGallery = ({ products }) => {
 
-  const swiperRef = React.useRef(null)
+
+  const listItems = []
+  products.products.products.edges.map((product, i) => {
+    listItems.push(
+      <SwiperSlide key={`slider-${i}`} id='gallery-items' > <ProductCard height={['14rem']} product={product} /> </SwiperSlide>
+    )
+  })
+
 
   return (
     <>
@@ -32,10 +39,10 @@ const SlideGallery = ({ products }) => {
           <Swiper
             spaceBetween={10}
             slidesPerView={'auto'}
-            ref={swiperRef}
+
             grabCursor={true}
           >
-            {products.products.products.edges.map(product => <SwiperSlide key={product.id} id='gallery-items' > <ProductCard height={['14rem']} product={product} /> </SwiperSlide>)}
+{listItems}
 
 
           </Swiper>

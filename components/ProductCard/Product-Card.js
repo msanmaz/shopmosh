@@ -18,9 +18,9 @@ const ProductCard = ({ product,height }) => {
   const { altText, originalSrc } = product.node.images.edges[0].node
   const originalSrc_Second = product.node.images.edges[1]?.node
   const price = product.node.priceRange.minVariantPrice.amount
-  const [isHovering, setIsHovered] = useState(() => { return false });
-  const [isHovering1, setIsHovered1] = useState(() => { return true });
-  const [added, setAdded] = useState(() => { return { message: 'Speichern!', show: false } });
+  const [isHovering, setIsHovered] = useState(false);
+  const [isHovering1, setIsHovered1] = useState(true);
+  const [added, setAdded] = useState(() => { return { message: 'Like!', show: false } });
 
   const handleClick = useCallback((e) => {
     e.preventDefault()
@@ -29,7 +29,7 @@ const ProductCard = ({ product,height }) => {
     });
     setAdded({ message: 'Added', show: true })
     setTimeout(() => {
-      setAdded({ message: "Speichern!", show: false });
+      setAdded({ message: "Wishlist!", show: false });
     }, 2000);
   }, [wishList,product,setWishList]);
 
@@ -39,15 +39,18 @@ const ProductCard = ({ product,height }) => {
   const onMouseLeave = () => { setIsHovered1(true), setIsHovered(false) };
 
   useEffect(() => {
-    localStorage.setItem('likes', JSON.stringify(wishList));
+    if(wishList !== undefined){
+      localStorage.setItem('likes', JSON.stringify(wishList));
+    }
   }, [wishList]);
+
 
 
   return (
 
-    <a className="group w-full md:w-[33%] lg:w-[30%] px-4 pt-4">
+    <a className="group w-full first-letter: md:w-[33%] lg:w-[30%] px-4 pt-4">
     <div className="w-full bg-gray-200 rounded-none overflow-hidden">
-      <div className={`relative  cursor-pointer h-[${height}] max-h-[${height}] md:h-[26rem] md:max-h-[26rem]`} onMouseEnter={onMouseEnter}
+      <div className={`relative  cursor-pointer h-[${height}] max-h-[14rem] md:h-[26rem] md:max-h-[26rem]`} onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}>
 
         <Transition
@@ -87,9 +90,9 @@ const ProductCard = ({ product,height }) => {
               className={'bg-[rgba(255,255,255,0.5)]'}
             >
               <div className='flex flex-row h-[3rem] w-full'>
-                <div className='w-1/2 px-4 justify-start flex flex-row items-center'>
+                <div className='w-1/2 hidden  px-4 justify-start md:flex flex-row items-center'>
                   <EyeOff size={20} />
-                  <div className='bebas text-gray-500 px-4'>Schnellansicht</div>
+                  <div className='bebas text-gray-500 px-4'>Off</div>
                 </div>
 
                   <div onClick={handleClick} className='w-1/2 justify-end px-2 flex flex-row items-center'>

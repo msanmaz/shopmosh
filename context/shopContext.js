@@ -6,12 +6,15 @@ import { useModalDropDown } from "context/modal-context"
 
 const CartContext = createContext()
 
+
+
+
+
 export default function ShopProvider({ children }) {
   const [cart, setCart] = useState([])
   const [cartOpen, setCartOpen] = useState(false)
   const [checkoutId, setCheckoutId] = useState('')
   const [checkoutUrl, setCheckoutUrl] = useState('')
-  const [drawer, setDrawer] = useState(false)
   const [loading, setLoading] = useState(false)
   const [customerInfo, setCustomerInfo] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -22,11 +25,7 @@ export default function ShopProvider({ children }) {
         : '';
     }
   });
-  const [wishList, setWishList] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return JSON.parse(window.localStorage.getItem('likes')) || { items: [] }
-    }
-  });
+  const [wishList, setWishList] = useState()
   const [accessToken, SetAccessToken] = useState(() => {
     if (typeof window !== 'undefined') {
       const stickyValue = window.localStorage.getItem('user');
@@ -53,19 +52,17 @@ export default function ShopProvider({ children }) {
 
       setCheckoutId(cartObject[1].id)
       setCheckoutUrl(cartObject[1].webUrl)
-
-
     }
-  }, [])
 
-  useEffect(() => {
-    const fetchCats = async () => {
+        const fetchCats = async () => {
       const collection = await getCollection()
       setCollection(collection)
     }
     fetchCats()
+    setWishList(JSON.parse(window.localStorage.getItem('likes')) || { items: [] })
 
   }, [])
+
 
 
     useEffect(()=> {

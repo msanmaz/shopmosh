@@ -18,7 +18,7 @@ const endpoints = [
 
     },
     {
-        name: 'Tshirt & Longsleeves',
+        name: 'Tshirt',
         slug: 'Tshirt & Longsleeves',
 
     },
@@ -43,7 +43,7 @@ const Topbar = ({ isHome, isScrolled }) => {
     const onCategoryClick = e => {
         setCurrentCategory(e.target.id)
         {
-            e.target.id === 'All' ? router.push(`/men`, undefined, { shallow: true }) : router.push(`/men/${e.target.id}`, undefined, { shallow: true })
+            e.target.id === 'All' ? router.push(`/apparel`, undefined, { shallow: true }) : router.push(`/apparel/${e.target.id}`, undefined, { shallow: true })
 
         }
     }

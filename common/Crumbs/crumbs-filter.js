@@ -11,7 +11,7 @@ const Crumbs = () => {
                     <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">
                         <ul>
                             <li ><Link href='/'>Home</Link></li>
-                            {router.query?.id ? <> <li ><Link href='/men'>Men</Link></li><li >{router.query.id}</li></> : <li><Link href='/men'>Men</Link></li>}
+                            {router.query?.id ? <> <li ><Link href='/men'>Apparel</Link></li><li >{router.query.id}</li></> : <li><Link href='/men'>Men</Link></li>}
 
                         </ul>
                     </div>
@@ -34,8 +34,8 @@ const Crumbs = () => {
                     </div>
 
                     <div className='flex flex-row justify-end py-[1rem]'>
-                        <div className='soft-font pr-4'><p className='text-sm text-gray-600 bebas py-[0.7rem]'>1 of 7</p></div>
-                        <div className='hover:bg-gray-200 hover:rounded-lg p-2 text-black bebas'>Next Page</div>
+                        <div className='soft-font pr-4'><p className='text-sm text-gray-600 bebas py-[0.7rem]'>1 of 1</p></div>
+                        <button disabled className='hover:bg-gray-200 hover:rounded-lg p-2 text-black bebas'>Next Page</button>
                     </div>
 
                 </div>

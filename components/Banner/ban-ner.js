@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import Button from '../../common/button/CommonButton'
 
@@ -5,7 +6,12 @@ const Banner = () => {
     return (
         <>
         <div className='px-[2rem] bebasBold py-[2rem]'>
-        <Button>See All Products</Button>
+            <Link href='/apparel/New In'>
+            <div className='text-white bg-gray-900 border-gray-900 hover:bg-white hover:text-gray-900 disabled:hover:bg-gray-900 disabled:hover:text-white w-full uppercase flex items-center justify-center min-h-[50px] px-5 py-[10px] text-small-regular border transition-colors duration-200 disabled:opacity-50'>See All Products</div>
+
+            </Link>
+
+
 
         </div>
             {/* bottom content */}
