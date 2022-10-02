@@ -31,7 +31,7 @@ const ProductDetail = ({ products }) => {
                     <div className="text-sm bebas text-[#A49D9B] uppercase breadcrumbs">
                         <ul>
                             <li><Link href='/'>Home</Link></li>
-                            <li><Link href='/men'>Men</Link></li>
+                            <li><Link href='/men'>Apparel</Link></li>
                             <li>{currentCategory}</li>
                         </ul>
                     </div>

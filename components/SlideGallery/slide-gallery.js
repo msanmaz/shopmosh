@@ -27,13 +27,11 @@ const SlideGallery = ({ products }) => {
 
       <div className="flex w-full flex-col md:pl-0 pl-[1rem] my-[0.5rem] md:my-[2rem]">
 
-        <div className="flex w-full">
 
-          <div className="flex w-full md:px-[2rem] flex-col">
+          <div className="flex w-full pt-4 md:pt-0 md:px-[2rem] flex-col">
             <div className="text-xl bebasBold">Community Favourites</div>
-            <div className="mb-4 py-2">Top picks from the shop</div>
+            <div className="futuraMedium text-gray-400 pb-2 md:py-2">Top picks from the shop</div>
           </div>
-        </div>
 
         <div className="max-w-full md:pl-[2rem]">
           <Swiper
