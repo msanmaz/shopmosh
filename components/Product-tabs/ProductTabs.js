@@ -75,7 +75,7 @@ const ProductInfoTab = ({ product }) => {
           <div>
             <span className="font-semibold">Dimensions</span>
             <p>
-              {product?.S1ize && product.Size.value}
+              {product?.Size && product.Size.value}
             </p>
           </div>
         </div>
