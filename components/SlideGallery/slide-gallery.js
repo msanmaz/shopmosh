@@ -17,7 +17,7 @@ const SlideGallery = ({ products }) => {
   const listItems = []
   products.products.products.edges.map((product, i) => {
     listItems.push(
-      <SwiperSlide key={`slider-${i}`} id='gallery-items' > <ProductCard height={['14rem']} product={product} /> </SwiperSlide>
+      <SwiperSlide key={`slider-${i}`} id='gallery-items' > <ProductCard height={'[17rem]'} product={product} /> </SwiperSlide>
     )
   })
 
