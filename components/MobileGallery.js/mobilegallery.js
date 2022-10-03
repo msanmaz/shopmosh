@@ -20,7 +20,7 @@ export const MobileGallery = ({product}) => {
 
     return (
         <div >
-            <Swiper pagination={false} modules={[Pagination]} id='mobileswiper' className="mySwiper">
+            <Swiper pagination={true} modules={[Pagination]} id='mobileswiper' className="mySwiper">
                     {listItems}
             </Swiper>
         </div>
