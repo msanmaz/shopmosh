@@ -35,7 +35,6 @@ const ImageOrPlaceholder = ({
 })  => {
   return images ? (
     <Image
-      priority
       src={images}
       alt="Thumbnail"
       layout="fill"
