@@ -19,7 +19,7 @@ const MenCategories = ({ cache }) => {
                 <div className="flex flex-wrap mx-[0.5rem] justify-center">
                     {cache.products.products.edges?.length >= 1 ?
                         cache.products.products.edges.map(product => (
-                            <ProductCard height={27} key={product.node.id} product={product} />
+                            <ProductCard height={24} key={product.node.id} product={product} />
 
                         )) : <div className='text-2xl bebas'>No Products Found</div>
                     }

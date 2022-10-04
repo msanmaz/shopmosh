@@ -9,11 +9,12 @@ const Thumbnail = ({
   images,
   bg,
   size = "small",
+  ratio='34'
 }) => {
   const initialImage = thumbnail || images
   return (
     <div
-      className={clsx(`relative aspect-[34/34] ${bg}`, {
+      className={clsx(`relative aspect-[${ratio}/34] ${bg}`, {
         "w-[80px]": size === "xs",
         "w-[180px]": size === "small",
         "w-[290px]": size === "medium",

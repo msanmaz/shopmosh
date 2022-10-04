@@ -9,12 +9,12 @@ SwiperCore.use([Navigation]);
 
 const endpoints = [
     {
-        name: 'New Arrivals',
+        name: 'Best Sellers',
         slug: 'New In',
     },
     {
-        name: 'Best Sellers',
-        slug: 'Sale',
+        name: 'Xmas',
+        slug: 'Xmas',
 
     },
     {
