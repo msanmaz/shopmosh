@@ -1,9 +1,9 @@
-Relavoux
+ShopMosh
 -----
 
 ### Introduction
 
-Relavoux is a E-commerce website that facilitates the discovery and fashion. This site lets you list new products and fashion, discover them, and list all items.
+ShopMosh is a E-commerce website that facilitates the discovery and fashion. This site lets you list new products and fashion, discover them, and list all items.
 
 My job was build out the UI firstly and follow agile method to power the Storefront API for the Relavoux site by connecting to a Shopify GraphQL for storing, querying, and getting products and users on RELAVOUX.
 
